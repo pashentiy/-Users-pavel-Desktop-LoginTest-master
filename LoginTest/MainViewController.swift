@@ -60,6 +60,8 @@ class MainViewController: UIViewController {
 
             self.eventsTableView.dataSource = self
             self.eventsTableView.delegate = self
+            
+            self.fakeTapOnTableView()
         }
     
         
@@ -71,9 +73,21 @@ class MainViewController: UIViewController {
         //        eventsTableView.estimatedRowHeight = 20
         //        eventsTableView.rowHeight = UITableView.automaticDimension
         
+  
+        
         setUpForSideMenuView()
         
     }
+    //after screen loading we still doesn't see anything so we need to tap so
+    //this func will do fakeTap on the table we for display all the loading screen
+    func fakeTapOnTableView (){
+        let indexPath = IndexPath(row: 2, section: 0)  // change row and section according to you
+        eventsTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        eventsTableView.delegate?.tableView?(eventsTableView, didSelectRowAt: indexPath)
+        
+    }
+    
+    
     
     //Facebook LogOut Button
     @IBAction func fbSideMenuLogOutBtn(_ sender: Any) {
