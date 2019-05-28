@@ -25,6 +25,15 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -35,6 +44,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - PromiseKit (~> 6.8)
   - SDWebImage
   - SwiftyJSON (~> 4.0)
 
@@ -48,6 +58,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - PromiseKit
     - SDWebImage
     - SwiftyJSON
 
@@ -60,9 +71,10 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 9edf1f1d8c2063aaf6b959f7ecdc23247332c6f3
+PODFILE CHECKSUM: 35fc4a7ca175fe172d5378038e9d3c637996412a
 
 COCOAPODS: 1.6.1

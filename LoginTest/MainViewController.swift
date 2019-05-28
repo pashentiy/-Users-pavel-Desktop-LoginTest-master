@@ -13,6 +13,7 @@ import FacebookShare
 import  SDWebImage
 import MobileCoreServices
 import DropDown
+import PromiseKit
 
 class MainViewController: UIViewController {
     
@@ -33,22 +34,27 @@ class MainViewController: UIViewController {
         getFbPostsId()
         print("<<<<<<<<<<<<<<<<<<<<< THIS IS urlOfImage BEFORE ENETRING INTO Request ",urlOFImageInPost)
         print("<<<<<<<<<<<<<<<<<<<<< THIS IS descriptionOfPost BEFORE ENETRING INTO Request ",descriptionOfPost)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            for i in 0..<self.arrayOfPostsId.count{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                    self.getFullFbPost(postIdNumber: self.arrayOfPostsId[i])
-                }
-            }
-            
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-            print("<<<<<<<<<<<<<<<<<<<<< THIS IS urlOfImage After ENETRING INTO Request ",self.urlOFImageInPost)
-            print("<<<<<<<<<<<<<<<<<<<<< THIS IS descriptionOfPost After ENETRING INTO Request ",self.descriptionOfPost)
-        }
+        
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            for i in 0..<self.arrayOfPostsId.count{
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+//                    self.getFullFbPost(postIdNumber: self.arrayOfPostsId[i])
+//                }
+//            }
+//
+//        }
+//
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+//            print("<<<<<<<<<<<<<<<<<<<<< THIS IS urlOfImage After ENETRING INTO Request ",self.urlOFImageInPost)
+//            print("<<<<<<<<<<<<<<<<<<<<< THIS IS descriptionOfPost After ENETRING INTO Request ",self.descriptionOfPost)
+//        }
         
         
         //Delay starts to create the Array after 4 second needs to get data from Facebook Server
-        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 
             self.eventArray = self.createArray()
 
@@ -82,10 +88,12 @@ class MainViewController: UIViewController {
         
         var sideMenuIsOpen = false
         
-    func getFbPostsId(){
+    func getFbPostsId(){ //this func fill up the arrays of arrayOfPostsId and descriptionOfPost
         print("****************** INTO getFbPostsId ********************")
         
         if(AccessToken.current != nil){
+
+            
             let req = GraphRequest(graphPath: "424551888097352/posts", parameters: ["fields":  "created_time,message,id,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
             req.start({ (connection, result) in
                 switch result {
@@ -101,11 +109,32 @@ class MainViewController: UIViewController {
                         print("@@@@ THE LENGTH OF THE ARRAY IS ", arrayOfDataFromFB?.count)
                         var sizeOfArray = Int(arrayOfDataFromFB!.count)
                         
-                        for i in 0..<sizeOfArray {
+                        for i in 0..<sizeOfArray { //do until 2
                             
                             print("THIS IS Index ", i)
                             let firstObjectFB = arrayOfDataFromFB?[i] as! NSObject
+                            print("00000000000000000000000000000000 ",firstObjectFB)
+                            
+                            
+                            let postId = firstObjectFB.value(forKey: "id") as! String
+                            self.getFullFbPost(postIdNumber: postId )
+                            
+                            
                             self.arrayOfPostsId.append(firstObjectFB.value(forKey: "id") as! String)
+                        
+                            //print("222222222222222 ",firstObjectFB.value(forKey: "message"))
+                            
+                            //if post was without text going here
+                            if firstObjectFB.value(forKey: "message") == nil{
+                                print("qqqqqqqqwqqqq THIS POST DOESN'T MESSAGE")
+                                //need to create a new array that will containt the messages of the post (before in getFbPostsId) func
+                                self.descriptionOfPost.append("")
+                            }
+                            else{
+                                
+                                self.descriptionOfPost.append(firstObjectFB.value(forKey: "message") as! String)
+                            }
+                            
                             print("++++++ ", sizeOfArray)
                             print("&&&&&&&&& This is the arrayOfPostsId \(self.arrayOfPostsId)")
                             
@@ -114,8 +143,8 @@ class MainViewController: UIViewController {
                     }
                 }
             })
-        }
     }
+}
     var descriptionOfPost : [String] = []
     var urlOFImageInPost : [String] = []
     var j = 0
@@ -127,10 +156,12 @@ class MainViewController: UIViewController {
             if(AccessToken.current != nil){
                 //for i in 0..<arrayOfPostsId.count {
                 
-                    print("___________ THIS IS THE \(self.j) loop")
-                    print("___________THIS IS THE \(self.j) REQUEST OF POST ID ",arrayOfPostsId[j])
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                    let req = GraphRequest(graphPath: "\(self.arrayOfPostsId[self.j])/attachments", parameters: ["fields":  "description,media,image,height,src,width,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+//                    print("___________ THIS IS THE \(self.j) loop")
+//                    print("___________THIS IS THE \(self.j) REQUEST OF POST ID ",arrayOfPostsId[j])
+                
+                
+                    // insert into String \(self.arrayOfPostsId[self.j])
+                    let req = GraphRequest(graphPath: "\(postIdNumber)/attachments", parameters: ["fields":  "description,media,image,height,src,width,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
                 req.start({ (connection, result) in
                     switch result {
                     case .failed(let error):
@@ -142,7 +173,7 @@ class MainViewController: UIViewController {
                             //print(responseDictionary)
                             
                             
-                                print("__________Lenght of Response Dictionary at \(self.j) loop ",responseDictionary.count)
+//                                print("__________Lenght of Response Dictionary at \(self.j) loop ",responseDictionary.count)
                                 var arrayOfDataFromFB = responseDictionary["data"] as! NSArray?
                                 print(arrayOfDataFromFB?.firstObject)
                             
@@ -150,10 +181,11 @@ class MainViewController: UIViewController {
                                 if arrayOfDataFromFB?.firstObject == nil{
                                     print("zzzzzzzzzzzzz THIS POST DOESN'T CONTAIN PICTURE")
                                     //need to create a new array that will containt the messages of the post (before in getFbPostsId) func
-                                    self.j = self.j + 1
+//                                    self.j = self.j + 1
+                                    self.urlOFImageInPost.append("")
                                 }
                                 else{//the post containt picture
-                                    print("_______POST CONTAIN PICTURE AT \(self.j) Post  ")
+//                                    print("_______POST CONTAIN PICTURE AT \(self.j) Post  ")
                                     //arrayOfDataFromFB = responseDictionary["data"] as! NSArray?
                                     print("(******* data was fetched )", arrayOfDataFromFB)
                                     
@@ -162,7 +194,7 @@ class MainViewController: UIViewController {
                                     
                                     let firstObjectFB = arrayOfDataFromFB?[0] as? NSObject
                                     print()
-                                    self.descriptionOfPost.append(firstObjectFB?.value(forKey: "description") as! String)
+                                    //self.descriptionOfPost.append(firstObjectFB?.value(forKey: "description") as! String)
                                     
                                     print("******** THIS IS THE descriptionOfPost ",self.descriptionOfPost)
                                     
@@ -176,13 +208,12 @@ class MainViewController: UIViewController {
                                     
                                     print("******* This is the NSObject in NSArray that I fetched out \n",firstObjectFB)
                                     print("******* This is the message in NSObject that I fetched out \n",self.urlOFImageInPost)
-                                    self.j = self.j + 1
+//                                    self.j = self.j + 1
                             }
                         }
                     }
                 })
             //}
-                }
         }
     }
         
