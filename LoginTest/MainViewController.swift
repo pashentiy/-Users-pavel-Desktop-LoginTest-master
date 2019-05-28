@@ -342,6 +342,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
         //To remove any maximum limit, and use as many lines as needed, set the value of this property to 0.
         // cell.textLabel?.numberOfLines = 0
         
+        //cell now is unselectable
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
         }
 
