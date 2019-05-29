@@ -88,7 +88,6 @@ class MainViewController: UIViewController {
     }
     
     
-    
     //Facebook LogOut Button
     @IBAction func fbSideMenuLogOutBtn(_ sender: Any) {
             if let token = AccessToken.current {
@@ -101,7 +100,8 @@ class MainViewController: UIViewController {
         var eventArray : [Event] = []
         
         var sideMenuIsOpen = false
-        
+   
+    
     func getFbPostsId(){ //this func fill up the arrays of arrayOfPostsId and descriptionOfPost
         print("****************** INTO getFbPostsId ********************")
         

@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
 
         }else{
             let manager = LoginManager()
-            //added new  ReadPermission.userPosts,ReadPermission.userPhotos
-            manager.logIn(readPermissions: [ReadPermission.publicProfile,ReadPermission.email,ReadPermission.userBirthday,ReadPermission.userPhotos,ReadPermission.userPosts], viewController: self) { loginResult in
+            //added new  ReadPermission.userPosts,ReadPermission.userPhotos, ReadPermission.userBirthday
+            manager.logIn(readPermissions: [ReadPermission.publicProfile,ReadPermission.email], viewController: self) { loginResult in
                 
                 switch loginResult {
                 case .failed(let error):
@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
                     print("User cancelled login.")
                 case .success( _, _, _):
                     print("Logged in!")
+                    print("000000000000000  MY ACCESS TOKEN IS ", AccessToken.current)
                     let mvc = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
                     self.present(mvc!, animated: true, completion: nil)
                 }
