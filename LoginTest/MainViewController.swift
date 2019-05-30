@@ -121,7 +121,8 @@ class MainViewController: UIViewController {
             
             //AccessToken.init(appId: "327424291272080", authenticationToken: authenticationToken, userId: nil, refreshDate: authenticationToken?.refreshDate, expirationDate: authenticationToken?.expirationDate, grantedPermissions: ["email"], declinedPermissions: [])
             
-            let req = GraphRequest(graphPath: "424551888097352/posts", parameters: ["fields":  "created_time,message,id,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+            //?limit=5 relates to the number of posts that displayed (at this state it's displayed only 5 last posts)
+            let req = GraphRequest(graphPath: "424551888097352/posts?limit=5", parameters: ["fields":  "created_time,message,id,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
             req.start({ (connection, result) in
                 switch result {
                 case .failed(let error):
@@ -451,6 +452,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
         
         //cell now is unselectable
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+//        space between the cells
+        cell.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        cell.layer.borderWidth = 1
+
         return cell
         }
 

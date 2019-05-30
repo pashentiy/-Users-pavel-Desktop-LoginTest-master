@@ -18,7 +18,8 @@ class EventViewCell: UITableViewCell {
         
         
         imageEventCell.sd_setImage(with: URL(string: event.urlOFImageInPost ), completed: nil)
-        self.imageEventCell.contentMode = .scaleAspectFit
+//        self.imageEventCell.contentMode = .scaleAspectFit
+        self.imageEventCell.contentMode = .redraw
         descriptionEventCell.text = event.description
 
     }
