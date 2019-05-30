@@ -26,6 +26,13 @@ class MainViewController: UIViewController {
 
     var arrayOfPostsId : [String] = []
     
+     var arrayOfArrayOfDictionaries : [[String:String]] = []
+    var responseMessages : [String:String] = ["image" : "",
+                                              "post_id" : "",
+                                               "description" : "",
+                                               "nopic" : "false",
+                                               "notext" : "" ]
+    var sizeOfArray : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +114,12 @@ class MainViewController: UIViewController {
         
         if(AccessToken.current != nil){
 
+//            var authenticationToken = AccessToken.current?
+//            authenticationToken = "EAAEpymiSdZAABAPNEGViAJZAIcHCrKy4wp58I3ToZAywEIYsN3aMrRI2vvHPxrecH5SQzF2pYXgefOWZCdbs5GrZAHVsKe2MuW2XeqcH1Dao0RTCSIveYC24pCZB7hvwiGg7ZCWPf5NpMz5KzyUz6OBHVSxyQHf2j4ZBWMUCKehudCc1ChrAdB4WWIjmesVL1SKgNzzvhOoGGwZDZD"
+//            print("_______ ",AccessToken.current?.appId)
+      
+            
+            //AccessToken.init(appId: "327424291272080", authenticationToken: authenticationToken, userId: nil, refreshDate: authenticationToken?.refreshDate, expirationDate: authenticationToken?.expirationDate, grantedPermissions: ["email"], declinedPermissions: [])
             
             let req = GraphRequest(graphPath: "424551888097352/posts", parameters: ["fields":  "created_time,message,id,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
             req.start({ (connection, result) in
@@ -121,9 +134,9 @@ class MainViewController: UIViewController {
                         let arrayOfDataFromFB = responseDictionary["data"] as! NSArray?
                         print("(******* data was fetched )", arrayOfDataFromFB)
                         print("@@@@ THE LENGTH OF THE ARRAY IS ", arrayOfDataFromFB?.count)
-                        var sizeOfArray = Int(arrayOfDataFromFB!.count)
+                        self.sizeOfArray = Int(arrayOfDataFromFB!.count)
                         
-                        for i in 0..<sizeOfArray { //do until 2
+                        for i in 0..<self.sizeOfArray { //do until 2
                             
                             print("THIS IS Index ", i)
                             let firstObjectFB = arrayOfDataFromFB?[i] as! NSObject
@@ -131,6 +144,8 @@ class MainViewController: UIViewController {
                             
                             
                             let postId = firstObjectFB.value(forKey: "id") as! String
+                            self.responseMessages.updateValue(postId, forKey: "post_id")
+                            self.arrayOfArrayOfDictionaries.append(self.responseMessages)
                             self.getFullFbPost(postIdNumber: postId )
                             
                             
@@ -140,16 +155,24 @@ class MainViewController: UIViewController {
                             
                             //if post was without text going here
                             if firstObjectFB.value(forKey: "message") == nil{
-                                print("qqqqqqqqwqqqq THIS POST DOESN'T MESSAGE")
+                                print("qqqqqqqqwqqqq THIS POST WITHOUT TEXT MESSAGE")
                                 //need to create a new array that will containt the messages of the post (before in getFbPostsId) func
-                                self.descriptionOfPost.append("")
-                            }
-                            else{
+//            **Return**                    self.descriptionOfPost.append("")
                                 
-                                self.descriptionOfPost.append(firstObjectFB.value(forKey: "message") as! String)
+                                //new one instead **Return**
+                                self.arrayOfArrayOfDictionaries[i].updateValue("", forKey: "description")
+                                self.arrayOfArrayOfDictionaries[i].updateValue("true", forKey: "notext")
+                            }
+                            else{//if post with text
+                                
+//               **Retunr**                 self.descriptionOfPost.append(firstObjectFB.value(forKey: "message") as! String)
+                                //new one instead **Return**
+                                self.arrayOfArrayOfDictionaries[i].updateValue(firstObjectFB.value(forKey: "message") as! String, forKey: "description")
+                                self.arrayOfArrayOfDictionaries[i].updateValue("false", forKey: "notext")
+                                
                             }
                             
-                            print("++++++ ", sizeOfArray)
+                            print("++++++ ", self.sizeOfArray)
                             print("&&&&&&&&& This is the arrayOfPostsId \(self.arrayOfPostsId)")
                             
                         }
@@ -192,11 +215,48 @@ class MainViewController: UIViewController {
                                 print(arrayOfDataFromFB?.firstObject)
                             
                                 //checking if this NSArray is empty or not if Empty the FB Post come without picture else with picture
-                                if arrayOfDataFromFB?.firstObject == nil{
+            //***NEED To change the if and else places == to != in if and change the contents
+                            
+                            if arrayOfDataFromFB?.firstObject == nil{
                                     print("zzzzzzzzzzzzz THIS POST DOESN'T CONTAIN PICTURE")
                                     //need to create a new array that will containt the messages of the post (before in getFbPostsId) func
-//                                    self.j = self.j + 1
-                                    self.urlOFImageInPost.append("")
+                                    
+                                    
+                                    // !!!!!!!!!! need to rollback if nothing going good
+//                                    self.urlOFImageInPost.append("")
+//              **Return**          let event = Event(urlOFImageInPost: "", description: self.descriptionOfPost[self.j])
+            
+                                
+                                
+                                
+//              **Return**          self.eventArray.append(event)
+                                
+                                    
+                                        //new one instead **Return**
+//              **MAYBE instead sizeOfArray arrayOfArrayOfDictionaries.count
+                                    for i in 0..<self.sizeOfArray {
+                                        
+                                        //if every place in array where Post contain Description and don't contain Image we will put "" empty ImageURL
+        //****NEED TO ADD BACK  && self.arrayOfArrayOfDictionaries[i]["description"] != "" && self.arrayOfArrayOfDictionaries[i]["image"] == "" && self.arrayOfArrayOfDictionaries[i]["notext"] == "false"
+                                        
+                                        if self.arrayOfArrayOfDictionaries[i]["post_id"] == postIdNumber{
+                                            
+                                            self.arrayOfArrayOfDictionaries[i]["image"] = ""
+                                            self.arrayOfArrayOfDictionaries[i].updateValue("nopic", forKey: "true")
+                                            
+                                            print("+++++++ THIS IS THE index of dictionaries ",self.j)
+                                            
+//                                            let event = Event(urlOFImageInPost: "", description: self.arrayOfArrayOfDictionaries[self.j]["description"]!)
+//                                            self.eventArray.append(event)
+                                            
+                                            print("+++++++++++ ~THIS IS THE INDEX self.j ",self.j)
+                                            print("-_-_-_-_-_ THIS POST DON'T CONTAIN PICTURE")
+                                            print("THIS IS THE arrayOfArrayOfDictionaries ",self.arrayOfArrayOfDictionaries)
+                                            
+                                        }
+                                    }
+                                    self.j = self.j + 1
+                                
                                 }
                                 else{//the post containt picture
 //                                    print("_______POST CONTAIN PICTURE AT \(self.j) Post  ")
@@ -218,11 +278,40 @@ class MainViewController: UIViewController {
                                     let enteringIntoImageObj = enteringIntoMediaObj.value(forKey: "image") as! NSObject
                                     print("******* This is the NSObject in NSArray that I fetched out \n",enteringIntoImageObj)
                                     
-                                    self.urlOFImageInPost.append(enteringIntoImageObj.value(forKey: "src") as! String)
+//                                    self.urlOFImageInPost.append(enteringIntoImageObj.value(forKey: "src") as! String)
+                                
+                                
+                                
+                                for i in 0..<self.sizeOfArray {
                                     
-                                    print("******* This is the NSObject in NSArray that I fetched out \n",firstObjectFB)
-                                    print("******* This is the message in NSObject that I fetched out \n",self.urlOFImageInPost)
-//                                    self.j = self.j + 1
+                                    //if every place in array where Post contain Description and don't contain Image we will put "" empty ImageURL
+            //**NEED TO ADD BACK self.arrayOfArrayOfDictionaries[i]["image"] == "" && self.arrayOfArrayOfDictionaries[i]["nopic"] == "false"
+                                    if self.arrayOfArrayOfDictionaries[i]["post_id"] == postIdNumber {
+                                        
+                                        self.arrayOfArrayOfDictionaries[i].updateValue(enteringIntoImageObj.value(forKey: "src") as! String, forKey: "image" )
+                                        
+                                        ////new one instead **Return**
+                                        
+//                                        let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[self.j]["image"]!, description: self.arrayOfArrayOfDictionaries[self.j]["description"]!)
+//                                        self.eventArray.append(event)
+                                        
+                                        print("+++++++++++ ~THIS IS THE INDEX self.j ",self.j)
+                                        print("-_-_-_-_-_ THIS POST CONTAIN PICTURE")
+                                        print("THIS IS THE arrayOfArrayOfDictionaries ",self.arrayOfArrayOfDictionaries )
+                                        
+                                        print("******* This is the NSObject in NSArray that I fetched out \n",firstObjectFB)
+                                        print("******* This is the message in NSObject that I fetched out \n",self.urlOFImageInPost)
+                                        
+                                    }
+                                }
+                                self.j = self.j + 1
+                                    
+                                    //insert a content of text and the url of a text only if the post has picture
+//          **Return**                          let event = Event(urlOFImageInPost: enteringIntoImageObj.value(forKey: "src") as! String, description: self.descriptionOfPost[self.j])
+//       **Return**                             self.eventArray.append(event)
+                                
+                              
+                                
                             }
                         }
                     }
@@ -310,6 +399,9 @@ class MainViewController: UIViewController {
             print("This is the urlOFImageInPost ",urlOFImageInPost)
             print("This is the descriptionOfPost ",descriptionOfPost)
             var arrTemp : [Event] = []
+        
+            
+
             
             for i in 0..<arrayOfPostsId.count{
                 print("????? THIS IS THE arrayOfPostsId length ",arrayOfPostsId.count)
@@ -317,9 +409,10 @@ class MainViewController: UIViewController {
                 print("????? THIS IS THE content of urlOFImageInPost ",urlOFImageInPost)
                 print("????? THIS IS THE content of descriptionOfPost ",descriptionOfPost)
                 print("????? And this is the index i ", i)
-                let event = Event(urlOFImageInPost: urlOFImageInPost[i], description: descriptionOfPost[i])
-                arrTemp.append(event)
-                
+//                let event = Event(urlOFImageInPost: urlOFImageInPost[i], description: descriptionOfPost[i])
+//                arrTemp.append(event)
+                let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[i]["image"]!, description: self.arrayOfArrayOfDictionaries[i]["description"]!)
+                self.eventArray.append(event)
             }
            
             
@@ -336,7 +429,7 @@ class MainViewController: UIViewController {
 //            arrTemp.append(event3)
 //            arrTemp.append(event4)
             
-            return arrTemp
+            return eventArray
         }
 }
 
