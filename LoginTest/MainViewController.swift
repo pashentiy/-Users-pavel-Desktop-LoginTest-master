@@ -33,11 +33,13 @@ class MainViewController: UIViewController {
                                                "nopic" : "false",
                                                "notext" : "" ]
     var sizeOfArray : Int = 0
+    var token : AccessToken? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        enterToFacebookApiByDefaultUser()
         getFbPostsId()
         print("<<<<<<<<<<<<<<<<<<<<< THIS IS urlOfImage BEFORE ENETRING INTO Request ",urlOFImageInPost)
         print("<<<<<<<<<<<<<<<<<<<<< THIS IS descriptionOfPost BEFORE ENETRING INTO Request ",descriptionOfPost)
@@ -94,9 +96,35 @@ class MainViewController: UIViewController {
         
     }
     
+    func enterToFacebookApiByDefaultUser(){
+        let accessToken = "EAAEpymiSdZAABAC3Qb9ZAPYMcnGzRaPtnFZCgawwZByaoMVpiX9PZBZCXUOt4J4NExlKu9ZA6iS6tCIOkrNSc4rz2OyDJs4bZCbJb8GhHdbe6ii2qncMqwSZAtTbaxDvF4gnPksEnZBC5lW74Mx1R8cYEAIaaWlY8C0CRlvAANQZAZCrUgZDZD"
+        
+        let appId = "327424291272080"
+        let userId = "10217545433655215"
+        var permisson : NSString = ""
+        permisson.appending("manage_pages")
+        //string to date
+        let refreshDateString = "2019-06-01"//17:15:40 +0000
+        let expirationDateString = "2019-07-30"//20:15:29 +0000
+        let date = NSDate()
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        let refreshDateFromString = dateFormater.date(from: refreshDateString)
+        let expirationDateFromString = dateFormater.date(from: expirationDateString)
+        print("_____this is the refreshDateFromString ",refreshDateFromString)
+        print("_____this is the expirationDateFromString ",expirationDateFromString)
+        
+        
+         token = AccessToken(appId: appId, authenticationToken: accessToken, userId: userId, refreshDate: refreshDateFromString!, expirationDate: expirationDateFromString!, grantedPermissions: nil, declinedPermissions: nil)
+        print("THIS IS MY MANUALLY ACCESS TOKEN ",token)
+        AccessToken.current = token
+        print("THIS IS MY Mannually AccessToken.current ", AccessToken.current)
+    }
+    
     
     //Facebook LogOut Button
     @IBAction func fbSideMenuLogOutBtn(_ sender: Any) {
+        print("****** current Acces token ",AccessToken.current)
             if let token = AccessToken.current {
                 AccessToken.current = nil
                 let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController

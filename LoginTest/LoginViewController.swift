@@ -10,11 +10,37 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         createAnArrayOfDictionaries()
         
-       
+       enterToFacebookApiByDefaultUser()
+        var x : Int
     }
     
     var arrayOfArrayOfDictionaries : [[String:String]] = []
     
+    
+    
+    func enterToFacebookApiByDefaultUser(){
+        let accessToken = "EAAEpymiSdZAABAC3Qb9ZAPYMcnGzRaPtnFZCgawwZByaoMVpiX9PZBZCXUOt4J4NExlKu9ZA6iS6tCIOkrNSc4rz2OyDJs4bZCbJb8GhHdbe6ii2qncMqwSZAtTbaxDvF4gnPksEnZBC5lW74Mx1R8cYEAIaaWlY8C0CRlvAANQZAZCrUgZDZD"
+        
+        let appId = "327424291272080"
+        let userId = "10217545433655215"
+        var permisson : NSString = ""
+        permisson.appending("manage_pages")
+        //string to date
+        let refreshDateString = "2019-06-01"//17:15:40 +0000
+        let expirationDateString = "2019-07-30"//20:15:29 +0000
+        let date = NSDate()
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        let refreshDateFromString = dateFormater.date(from: refreshDateString)
+        let expirationDateFromString = dateFormater.date(from: expirationDateString)
+        print("_____this is the refreshDateFromString ",refreshDateFromString)
+        print("_____this is the expirationDateFromString ",expirationDateFromString)
+        
+
+        let token : AccessToken = AccessToken(appId: appId, authenticationToken: accessToken, userId: userId, refreshDate: refreshDateFromString!, expirationDate: expirationDateFromString!, grantedPermissions: nil, declinedPermissions: nil)
+        
+    }
+    //testing function
     func createAnArrayOfDictionaries(){
         
         var responseMessages1 : [String:String] = ["image" : "https://1image",

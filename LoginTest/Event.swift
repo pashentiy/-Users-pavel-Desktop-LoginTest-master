@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class Event{
+class Event{//event is's class that represent the posts on the main screen
     
     var description : String
     var urlOFImageInPost : String
