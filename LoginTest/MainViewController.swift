@@ -117,6 +117,7 @@ class MainViewController: UIViewController {
         
          token = AccessToken(appId: appId, authenticationToken: accessToken, userId: userId, refreshDate: refreshDateFromString!, expirationDate: expirationDateFromString!, grantedPermissions: nil, declinedPermissions: nil)
         print("THIS IS MY MANUALLY ACCESS TOKEN ",token)
+        //override my accessToken (manager ) on that one that Facebook give me 
         AccessToken.current = token
         print("THIS IS MY Mannually AccessToken.current ", AccessToken.current)
     }
