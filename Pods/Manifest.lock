@@ -25,6 +25,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - lottie-ios (3.1.0)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
     - PromiseKit/Foundation (= 6.8.4)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - lottie-ios
   - PromiseKit (~> 6.8)
   - SDWebImage
   - SwiftyJSON (~> 4.0)
@@ -58,6 +60,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - lottie-ios
     - PromiseKit
     - SDWebImage
     - SwiftyJSON
@@ -71,10 +74,11 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
+  lottie-ios: 9467723922dfff46f6d4e3019c32594a62440b7c
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 9a7fbc8537eb14ffd4865d12bffbf425084343e9
+PODFILE CHECKSUM: c1d128b2afab9dee7f88b58a6350cc85e6fd1324
 
 COCOAPODS: 1.6.1

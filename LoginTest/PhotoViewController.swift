@@ -12,10 +12,12 @@ import FacebookLogin
 import  SDWebImage
 import MobileCoreServices
 import SwiftyJSON
+import Lottie
 
 class PhotoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     
+    @IBOutlet var backGroundView: UIView!
     
     var userPhotos : NSArray?
     var myCollectionView : UICollectionView!
@@ -59,7 +61,8 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
 //        myCollectionView.backgroundColor = UIColor.white
 //        self.view.addSubview(myCollectionView)
 
-
+        
+        startAnimation()
         
         
         getFbAlbumsId()
@@ -89,6 +92,34 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         
        
         
+    }
+    
+    func startAnimation(){
+        
+        var viewThatContainAnimationNewManually : UIView = UIView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        viewThatContainAnimationNewManually.backgroundColor = UIColor.init(ciColor: .white)
+        viewThatContainAnimationNewManually.layer.opacity = 1
+        let animation = AnimationView(name: "loadingS5")
+        //        let animation = AnimationView(name: "loadingS1")
+        //animationView.contentMode = .scaleAspectFit
+        backGroundView.addSubview(viewThatContainAnimationNewManually)
+        
+        
+        animation.frame = view.frame
+        
+        
+        viewThatContainAnimationNewManually.addSubview(animation)
+        
+        //        viewThatConsistAnimation.addSubview(animationView)
+        animation.play()
+        animation.animationSpeed = 0.8
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .loop
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.1) {
+            animation.stop()
+            viewThatContainAnimationNewManually.removeFromSuperview()
+            //self.animationView.removeFromSuperview()
+        }
     }
     
     

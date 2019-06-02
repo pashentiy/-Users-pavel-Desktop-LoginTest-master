@@ -14,16 +14,18 @@ import  SDWebImage
 import MobileCoreServices
 import DropDown
 import PromiseKit
+import Lottie
 
 class MainViewController: UIViewController {
     
-        @IBOutlet weak var sideMenuLeadingConstraints: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuLeadingConstraints: NSLayoutConstraint!
         @IBOutlet weak var eventsTableView: UITableView!
         @IBOutlet weak var openMenuBtn: UIButton!
         @IBOutlet weak var exitMenuBtn: UIButton!
         @IBOutlet weak var sideMenuView: UIView!
     
-
+    @IBOutlet var backGroundView: UIView!
+    
     var arrayOfPostsId : [String] = []
     
      var arrayOfArrayOfDictionaries : [[String:String]] = []
@@ -31,7 +33,9 @@ class MainViewController: UIViewController {
                                               "post_id" : "",
                                                "description" : "",
                                                "nopic" : "false",
-                                               "notext" : "" ]
+                                               "notext" : "" ,
+                                               "novideo": "true",
+                                               "video_url" : ""]
     var sizeOfArray : Int = 0
     var token : AccessToken? = nil
     
@@ -39,6 +43,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        startAnimation()
         enterToFacebookApiByDefaultUser()
         getFbPostsId()
         print("<<<<<<<<<<<<<<<<<<<<< THIS IS urlOfImage BEFORE ENETRING INTO Request ",urlOFImageInPost)
@@ -85,6 +90,7 @@ class MainViewController: UIViewController {
   
         
         setUpForSideMenuView()
+        print(arrayOfArrayOfDictionaries)
         
     }
     //after screen loading we still doesn't see anything so we need to tap so
@@ -122,6 +128,33 @@ class MainViewController: UIViewController {
         print("THIS IS MY Mannually AccessToken.current ", AccessToken.current)
     }
     
+    func startAnimation(){
+        
+        var viewThatContainAnimationNewManually : UIView = UIView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        viewThatContainAnimationNewManually.backgroundColor = UIColor.init(ciColor: .white)
+        viewThatContainAnimationNewManually.layer.opacity = 1
+                let animation = AnimationView(name: "loadingS5")
+//        let animation = AnimationView(name: "loadingS1")
+        //animationView.contentMode = .scaleAspectFit
+        backGroundView.addSubview(viewThatContainAnimationNewManually)
+        
+       
+        animation.frame = view.frame
+
+        
+        viewThatContainAnimationNewManually.addSubview(animation)
+        
+        //        viewThatConsistAnimation.addSubview(animationView)
+        animation.play()
+        animation.animationSpeed = 0.8
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .loop
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.1) {
+            animation.stop()
+            viewThatContainAnimationNewManually.removeFromSuperview()
+            //self.animationView.removeFromSuperview()
+        }
+    }
     
     //Facebook LogOut Button
     @IBAction func fbSideMenuLogOutBtn(_ sender: Any) {
@@ -228,7 +261,7 @@ class MainViewController: UIViewController {
                 
                 
                     // insert into String \(self.arrayOfPostsId[self.j])
-                    let req = GraphRequest(graphPath: "\(postIdNumber)/attachments", parameters: ["fields":  "description,media,image,height,src,width,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+                    let req = GraphRequest(graphPath: "\(postIdNumber)/attachments", parameters: ["fields":  "description,media,image,height,src,source,width,feed.limit(5)"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
                 req.start({ (connection, result) in
                     switch result {
                     case .failed(let error):
@@ -289,26 +322,42 @@ class MainViewController: UIViewController {
                                 
                                 }
                                 else{//the post containt picture
+                                
 //                                    print("_______POST CONTAIN PICTURE AT \(self.j) Post  ")
                                     //arrayOfDataFromFB = responseDictionary["data"] as! NSArray?
                                     print("(******* data was fetched )", arrayOfDataFromFB)
                                     
                                     print("***** THIS IS MY NEW ARRAY THAT I FETCHED *****", arrayOfDataFromFB?[0])
-                                    
-                                    
+                                
+                                
+                                
                                     let firstObjectFB = arrayOfDataFromFB?[0] as? NSObject
-                                    print()
+                                    print("==== First object " , firstObjectFB)
                                     //self.descriptionOfPost.append(firstObjectFB?.value(forKey: "description") as! String)
-                                    
+                               
+                             
+                                
                                     print("******** THIS IS THE descriptionOfPost ",self.descriptionOfPost)
                                     
                                     
                                     let enteringIntoMediaObj = firstObjectFB?.value(forKey: "media") as! NSObject
+                                print("you are into etnteringIntoMediaObj and it's look like thie ",enteringIntoMediaObj )
+                                
+                                
+                                var enteringIntoVideoObjUrl = ""
+                                //now we will ask if the post is contain Video
+                                if enteringIntoMediaObj.value(forKey: "source") as? NSObject != nil{
+                                    enteringIntoVideoObjUrl = (enteringIntoMediaObj.value(forKey: "source") as! String)
+                                    print("You are into Video Object ",enteringIntoVideoObjUrl)
+                                    
+                                }
+                                 //no video at this post
                                     print("******* This is the NSObject in NSArray that I fetched out \n",enteringIntoMediaObj)
-                                    let enteringIntoImageObj = enteringIntoMediaObj.value(forKey: "image") as! NSObject
+                                    var enteringIntoImageObj = enteringIntoMediaObj.value(forKey: "image") as! NSObject
                                     print("******* This is the NSObject in NSArray that I fetched out \n",enteringIntoImageObj)
                                     
 //                                    self.urlOFImageInPost.append(enteringIntoImageObj.value(forKey: "src") as! String)
+                            
                                 
                                 
                                 
@@ -317,9 +366,22 @@ class MainViewController: UIViewController {
                                     //if every place in array where Post contain Description and don't contain Image we will put "" empty ImageURL
             //**NEED TO ADD BACK self.arrayOfArrayOfDictionaries[i]["image"] == "" && self.arrayOfArrayOfDictionaries[i]["nopic"] == "false"
                                     if self.arrayOfArrayOfDictionaries[i]["post_id"] == postIdNumber {
+                                       
                                         
-                                        self.arrayOfArrayOfDictionaries[i].updateValue(enteringIntoImageObj.value(forKey: "src") as! String, forKey: "image" )
+                                        //for picture if exitst in post
+                                        //even if video is exist we add the url of video and the url of video and after we will choose what to do next
+                                        print("this line is fall down the value of enteringIntoImageObj is ",enteringIntoImageObj.value(forKey: "src") as? String )
+                                    self.arrayOfArrayOfDictionaries[i].updateValue(enteringIntoImageObj.value(forKey: "src") as! String, forKey: "image" )
                                         
+                                        
+                                    
+                                        if enteringIntoVideoObjUrl != ""{
+                                        // we have a video in post
+                                        //for video if exist
+                                        self.arrayOfArrayOfDictionaries[i].updateValue(enteringIntoVideoObjUrl, forKey: "video_url")
+                                            self.arrayOfArrayOfDictionaries[i].updateValue("false", forKey: "novideo")
+                                            enteringIntoVideoObjUrl == ""
+                                        }
                                         ////new one instead **Return**
                                         
 //                                        let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[self.j]["image"]!, description: self.arrayOfArrayOfDictionaries[self.j]["description"]!)
@@ -385,7 +447,7 @@ class MainViewController: UIViewController {
         
         
         
-        //Side Menu
+        //Side Menu Button
         @IBAction func sideMenuBtn(_ sender: UIButton) {
             print(sender.tag)
             if sender.tag == 0{//Open menu button was pressed
@@ -417,6 +479,22 @@ class MainViewController: UIViewController {
                 
             }
         }
+    //Side Menu View - needs, If User navigate to another UIViewController at the time he will come back the side menu on the Main screen will be closed yet ( This func Only For Good User Feelings)
+    @IBAction func sideMenuView(_ sender: UIButton) {
+        print("BUTTON WAS PRESSED ON SIDE MENU " ,sender.tag)
+        
+        if sender.tag == 0 || sender.tag == 1 || sender.tag == 2 || sender.tag == 3 || sender.tag == 4 || sender.tag == 5 {
+            openMenuBtn.isHidden = false
+            exitMenuBtn.isHidden = true
+            sideMenuLeadingConstraints.constant = -290
+            sideMenuIsOpen = false
+            //animation
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        
+    }
     
    
     
@@ -432,7 +510,7 @@ class MainViewController: UIViewController {
         
             
 
-            
+             var j = 0
             for i in 0..<arrayOfPostsId.count{
                 print("????? THIS IS THE arrayOfPostsId length ",arrayOfPostsId.count)
                 print("????? THIS IS THE content of arrayOfPostsId ",arrayOfPostsId)
@@ -441,8 +519,36 @@ class MainViewController: UIViewController {
                 print("????? And this is the index i ", i)
 //                let event = Event(urlOFImageInPost: urlOFImageInPost[i], description: descriptionOfPost[i])
 //                arrTemp.append(event)
-                let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[i]["image"]!, description: self.arrayOfArrayOfDictionaries[i]["description"]!)
-                self.eventArray.append(event)
+               
+                //if the post contain the video we first add url to the pic
+                if self.arrayOfArrayOfDictionaries[i]["novideo"] == "false"{
+                    print("we are into IF that show that this post contaion video ")
+                    let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[i]["video_url"]!, description: self.arrayOfArrayOfDictionaries[i]["description"]!,doesThisEventContainVideo: "yes")
+                    print("THis is the VIDEO_URL THAT WAS ADDED ", self.arrayOfArrayOfDictionaries[i]["video_url"]!)
+                    self.eventArray.append(event)
+                    
+                    print("EST VIDEO WE PASS THIS DATA TO \(j) EVENT ")
+                    print("Video URl",self.arrayOfArrayOfDictionaries[i]["video_url"]!)
+                    print("Description of post ",self.arrayOfArrayOfDictionaries[i]["description"]!)
+                    print("THE END Of \(j) EVENT")
+                    j+=1
+                }
+                else{
+                     let event = Event(urlOFImageInPost: self.arrayOfArrayOfDictionaries[i]["image"]!, description: self.arrayOfArrayOfDictionaries[i]["description"]!,doesThisEventContainVideo: "no")
+                    self.eventArray.append(event)
+                    
+                    
+                    print("NO VIDEO WE PASS THIS DATA TO \(j) EVENT ")
+                    print("Video URl",self.arrayOfArrayOfDictionaries[i]["video_url"]!)
+                    print("Image URl", self.arrayOfArrayOfDictionaries[i]["image"])
+                    print("Description of post ",self.arrayOfArrayOfDictionaries[i]["description"]!)
+                    print("THE END Of \(j) EVENT")
+                    
+                    
+                    j+=1
+                }
+            
+                
             }
            
             
@@ -485,7 +591,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
 //        space between the cells
         cell.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         cell.layer.borderWidth = 1
-
+        
+    //Need to improve if it's the last Cell to load (Video in our case) we should to reload exact this data after we scroll again
+        if(indexPath.row == (eventArray.count - 1)){
+            
+            cell.setEventCell(event: eventArray[indexPath.row])
+        }
+        
         return cell
         }
 

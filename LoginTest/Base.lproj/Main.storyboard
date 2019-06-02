@@ -230,6 +230,7 @@
                         <viewLayoutGuide key="safeArea" id="RRw-xl-WM1"/>
                     </view>
                     <connections>
+                        <outlet property="backGroundView" destination="03D-uI-6Et" id="mSI-Y5-8Mj"/>
                         <outlet property="photoCollectionView" destination="oi0-3h-Wih" id="3sM-44-wvv"/>
                     </connections>
                 </viewController>
@@ -275,6 +276,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="299.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCI-27-Fxv" userLabel="webVideoView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </webView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4U-GB-ZU8">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
                                                     <constraints>
@@ -295,19 +300,24 @@
                                                 <constraint firstAttribute="trailing" secondItem="q4U-GB-ZU8" secondAttribute="trailing" id="9Pr-Gj-hdY"/>
                                                 <constraint firstItem="HAr-EA-feI" firstAttribute="leading" secondItem="Rab-jc-am5" secondAttribute="leading" constant="5" id="GBj-7S-ELP"/>
                                                 <constraint firstAttribute="bottom" secondItem="HAr-EA-feI" secondAttribute="bottom" constant="5" id="Iry-jv-yVD"/>
+                                                <constraint firstItem="HAr-EA-feI" firstAttribute="top" secondItem="GCI-27-Fxv" secondAttribute="bottom" constant="5" id="TNi-wA-bM7"/>
                                                 <constraint firstItem="q4U-GB-ZU8" firstAttribute="top" secondItem="Rab-jc-am5" secondAttribute="top" id="Wpb-RW-5h7"/>
+                                                <constraint firstItem="GCI-27-Fxv" firstAttribute="top" secondItem="Rab-jc-am5" secondAttribute="top" id="axf-jz-es4"/>
+                                                <constraint firstItem="GCI-27-Fxv" firstAttribute="leading" secondItem="Rab-jc-am5" secondAttribute="leading" id="cmX-3w-dgw"/>
+                                                <constraint firstAttribute="trailing" secondItem="GCI-27-Fxv" secondAttribute="trailing" id="ltS-pV-6UW"/>
                                                 <constraint firstItem="HAr-EA-feI" firstAttribute="top" secondItem="q4U-GB-ZU8" secondAttribute="bottom" constant="5" id="xKk-iE-5Om"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionEventCell" destination="HAr-EA-feI" id="gXS-qu-WDq"/>
                                             <outlet property="imageEventCell" destination="q4U-GB-ZU8" id="L68-TK-ZvG"/>
+                                            <outlet property="webVideoView" destination="GCI-27-Fxv" id="dCD-4l-DPO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-ux-Ukc" userLabel="Side Menu View">
-                                <rect key="frame" x="0.0" y="92" width="270" height="804"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-ux-Ukc" userLabel="Side Menu View">
+                                <rect key="frame" x="-290" y="92" width="270" height="804"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdI-gZ-41a" userLabel="Home Page">
                                         <rect key="frame" x="0.0" y="79" width="270" height="32.225289125391868"/>
@@ -318,10 +328,11 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="fwF-XI-gO3"/>
                                             <segue destination="YdL-Uh-sod" kind="show" identifier="PhotoViewController" id="Qhu-NZ-meh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIa-DH-QUV" userLabel="Gallery Page">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIa-DH-QUV" userLabel="Gallery Page">
                                         <rect key="frame" x="0.0" y="145" width="270" height="33.418818352258228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -329,8 +340,11 @@
                                         <state key="normal" title="גלריית תמונות">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="vdw-9N-5x8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPj-Bh-VcX" userLabel="About Us Page">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPj-Bh-VcX" userLabel="About Us Page">
                                         <rect key="frame" x="0.0" y="197" width="270" height="32.822053738825076"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -338,8 +352,11 @@
                                         <state key="normal" title="אודות">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="u4W-WD-REa"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkG-Kp-lkg" userLabel="Contact Us Page">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkG-Kp-lkg" userLabel="Contact Us Page">
                                         <rect key="frame" x="0.0" y="258" width="270" height="33.418818352258199"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,8 +364,11 @@
                                         <state key="normal" title="צור קשר">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="co4-6X-1mY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-GD-5C1" userLabel="Login In Page">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-GD-5C1" userLabel="Login In Page">
                                         <rect key="frame" x="0.0" y="322" width="270" height="33.418818352258256"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -356,8 +376,11 @@
                                         <state key="normal" title="כניסה (סגל בלבד)">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="NV7-Ws-7bQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exo-ol-haI" userLabel="Control Panel Page">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exo-ol-haI" userLabel="Control Panel Page">
                                         <rect key="frame" x="0.0" y="385" width="270" height="32.822053738825048"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -365,6 +388,9 @@
                                         <state key="normal" title="לוח בקרה">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="TVk-le-0mB"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7h0-HM-xPY" userLabel="HomePageIcon">
                                         <rect key="frame" x="8" y="77" width="35" height="35.209112192557797"/>
@@ -492,6 +518,7 @@
                         <viewLayoutGuide key="safeArea" id="z0R-aq-7WV"/>
                     </view>
                     <connections>
+                        <outlet property="backGroundView" destination="MSR-bV-Kx0" id="vuw-uW-1rq"/>
                         <outlet property="eventsTableView" destination="htK-Sj-V7V" id="iZh-1G-ib3"/>
                         <outlet property="exitMenuBtn" destination="XKM-Js-U9v" id="DmA-Qa-StO"/>
                         <outlet property="openMenuBtn" destination="Gh4-AL-hyU" id="tIb-vE-9zs"/>

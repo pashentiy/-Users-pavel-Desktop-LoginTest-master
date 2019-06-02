@@ -20,6 +20,11 @@
 		E9034B4A229C5C08008AFF2E /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9034B49229C5C07008AFF2E /* EventViewCell.swift */; };
 		E9A7D20622A1A8200052EE42 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */; };
 		E9A7D20A22A1B0B60052EE42 /* PhotoInAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */; };
+		E9A7D21E22A29C960052EE42 /* loadingS3.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21922A29C950052EE42 /* loadingS3.json */; };
+		E9A7D21F22A29C960052EE42 /* loadingS1.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21A22A29C950052EE42 /* loadingS1.json */; };
+		E9A7D22022A29C960052EE42 /* loadingS4.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21B22A29C950052EE42 /* loadingS4.json */; };
+		E9A7D22122A29C960052EE42 /* loadingS5.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21C22A29C950052EE42 /* loadingS5.json */; };
+		E9A7D22222A29C960052EE42 /* loadingS2.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21D22A29C960052EE42 /* loadingS2.json */; };
 		E9FD2FF622970B5400C6832A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD2FF522970B5400C6832A /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +46,11 @@
 		E9034B49229C5C07008AFF2E /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInAlbum.swift; sourceTree = "<group>"; };
+		E9A7D21922A29C950052EE42 /* loadingS3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS3.json; sourceTree = "<group>"; };
+		E9A7D21A22A29C950052EE42 /* loadingS1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS1.json; sourceTree = "<group>"; };
+		E9A7D21B22A29C950052EE42 /* loadingS4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS4.json; sourceTree = "<group>"; };
+		E9A7D21C22A29C950052EE42 /* loadingS5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS5.json; sourceTree = "<group>"; };
+		E9A7D21D22A29C960052EE42 /* loadingS2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS2.json; sourceTree = "<group>"; };
 		E9FD2FF522970B5400C6832A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +96,11 @@
 				E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */,
 				E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */,
 				17499218223541E300D43D54 /* Main.storyboard */,
+				E9A7D21A22A29C950052EE42 /* loadingS1.json */,
+				E9A7D21D22A29C960052EE42 /* loadingS2.json */,
+				E9A7D21922A29C950052EE42 /* loadingS3.json */,
+				E9A7D21B22A29C950052EE42 /* loadingS4.json */,
+				E9A7D21C22A29C950052EE42 /* loadingS5.json */,
 				1749921B223541E400D43D54 /* Assets.xcassets */,
 				17E116D622354384001D1CA9 /* ProfileViewController.swift */,
 				17B6DE39224C716C00D7F298 /* MainNavigationController.swift */,
@@ -173,7 +188,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1749921F223541E400D43D54 /* LaunchScreen.storyboard in Resources */,
+				E9A7D22222A29C960052EE42 /* loadingS2.json in Resources */,
+				E9A7D22122A29C960052EE42 /* loadingS5.json in Resources */,
+				E9A7D22022A29C960052EE42 /* loadingS4.json in Resources */,
 				1749921C223541E400D43D54 /* Assets.xcassets in Resources */,
+				E9A7D21E22A29C960052EE42 /* loadingS3.json in Resources */,
+				E9A7D21F22A29C960052EE42 /* loadingS1.json in Resources */,
 				1749921A223541E300D43D54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +243,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -239,6 +260,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
