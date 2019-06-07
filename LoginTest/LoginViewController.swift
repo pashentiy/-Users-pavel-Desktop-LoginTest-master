@@ -3,6 +3,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
+//This is FaceBookLoginViewController //DON'T Use this class
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {

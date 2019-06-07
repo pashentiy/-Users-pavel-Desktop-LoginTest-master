@@ -1,0 +1,60 @@
+<!--<html>-->
+<!--<head>-->
+<!--<script>-->
+<!--//     (function self() {-->
+<!--//   const vid = document.querySelector('video')-->
+<!--//   if(vid == null) {-->
+<!--//     setTimeout(() => self(), 100)-->
+<!--//     return-->
+<!--//   }-->
+<!--//   vid.removeAttribute('autoplay')-->
+<!--//   vid.onplay = e => {-->
+<!--//     vid.pause()-->
+<!--//     vid.onplay = () => {}-->
+<!--//   }-->
+<!--// })()-->
+<!--</script>-->
+<!--<style>-->
+<!--body { background-color: cyan; }-->
+<!-- </style>-->
+<!-- </head>-->
+<!-- <body>-->
+<!--        <video controls src="https://video.xx.fbcdn.net/v/t42.9040-2/61974269_429756271198549_5323813878394519552_n.mp4?_nc_cat=106&efg=eyJybHIiOjM3OSwicmxhIjo1MTIsInZlbmNvZGVfdGFnIjoic3ZlX3NkIn0%3D&rl=379&vabr=211&_nc_ht=video.xx&oh=fc58d1f2e46b5d33337282eaa59cbb8e&oe=5CF5C0F9">-->
+<!--        </video>-->
+<!-- </body>-->
+<!-- </html>-->
+
+
+<html>
+    <head>
+        <script>
+            (function self() {
+             const vid = document.querySelector('video')
+             if(vid == null) {
+             setTimeout(() => self(), 100)
+             return
+             }
+             vid.removeAttribute('autoplay')
+             vid.onplay = e => {
+             vid.pause()
+             vid.onplay = () => {}
+             }
+             })()
+        </script>
+        <style>
+            
+            div.relative{
+                margin-left: 30%;
+                
+                width: 400px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="relative">
+            <video controls src="https://video.xx.fbcdn.net/v/t42.9040-2/61974269_429756271198549_5323813878394519552_n.mp4?_nc_cat=106&efg=eyJybHIiOjM3OSwicmxhIjo1MTIsInZlbmNvZGVfdGFnIjoic3ZlX3NkIn0%3D&rl=379&vabr=211&_nc_ht=video.xx&oh=fc58d1f2e46b5d33337282eaa59cbb8e&oe=5CF5C0F9">
+            </video>
+        <div>
+    </body>
+</html>

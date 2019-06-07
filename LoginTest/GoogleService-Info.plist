@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>445104021386-pus9fk680hm9hidt2hpo7dl3n1kqap70.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.445104021386-pus9fk680hm9hidt2hpo7dl3n1kqap70</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBXepTJ7u5vcntt8CZzZvCKfi_M4gJcUl4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>445104021386</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pavelpetrenko.Facebook-login-Test</string>
+	<key>PROJECT_ID</key>
+	<string>agudajce-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>agudajce-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:445104021386:ios:e090a2bf54c86445</string>
+	<key>DATABASE_URL</key>
+	<string>https://agudajce-ios.firebaseio.com</string>
+</dict>
+</plist>

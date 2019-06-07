@@ -18,6 +18,14 @@
 		E9034B46229C5B24008AFF2E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9034B45229C5B24008AFF2E /* MainViewController.swift */; };
 		E9034B48229C5C00008AFF2E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9034B47229C5BFF008AFF2E /* Event.swift */; };
 		E9034B4A229C5C08008AFF2E /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9034B49229C5C07008AFF2E /* EventViewCell.swift */; };
+		E962D23B22A7FE0500EDD19F /* LoginFirebaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D23A22A7FE0500EDD19F /* LoginFirebaseViewController.swift */; };
+		E962D23E22A7FE3700EDD19F /* animation-w80-h80.json in Resources */ = {isa = PBXBuildFile; fileRef = E962D23C22A7FE3700EDD19F /* animation-w80-h80.json */; };
+		E962D23F22A7FE3700EDD19F /* successOk.json in Resources */ = {isa = PBXBuildFile; fileRef = E962D23D22A7FE3700EDD19F /* successOk.json */; };
+		E962D24422A809B500EDD19F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E962D24322A809B500EDD19F /* GoogleService-Info.plist */; };
+		E962D24722A845FF00EDD19F /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24622A845FF00EDD19F /* AboutUsViewController.swift */; };
+		E962D24922A847E200EDD19F /* ContactUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24822A847E200EDD19F /* ContactUsPageViewController.swift */; };
+		E962D24C22A84B7000EDD19F /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */; };
+		E962D24F22A974D900EDD19F /* SAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24E22A974D900EDD19F /* SAButton.swift */; };
 		E9A7D20622A1A8200052EE42 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */; };
 		E9A7D20A22A1B0B60052EE42 /* PhotoInAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */; };
 		E9A7D21E22A29C960052EE42 /* loadingS3.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21922A29C950052EE42 /* loadingS3.json */; };
@@ -25,6 +33,9 @@
 		E9A7D22022A29C960052EE42 /* loadingS4.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21B22A29C950052EE42 /* loadingS4.json */; };
 		E9A7D22122A29C960052EE42 /* loadingS5.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21C22A29C950052EE42 /* loadingS5.json */; };
 		E9A7D22222A29C960052EE42 /* loadingS2.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21D22A29C960052EE42 /* loadingS2.json */; };
+		E9A7D22422A449380052EE42 /* autoPlayOff.js in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D22322A449380052EE42 /* autoPlayOff.js */; };
+		E9A7D22C22A47E810052EE42 /* htmlCode.html in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D22B22A47E810052EE42 /* htmlCode.html */; };
+		E9A7D23122A570030052EE42 /* autoPlayOffAfterReloadData.js in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D23022A570030052EE42 /* autoPlayOffAfterReloadData.js */; };
 		E9FD2FF622970B5400C6832A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FD2FF522970B5400C6832A /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +55,14 @@
 		E9034B45229C5B24008AFF2E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E9034B47229C5BFF008AFF2E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E9034B49229C5C07008AFF2E /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
+		E962D23A22A7FE0500EDD19F /* LoginFirebaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirebaseViewController.swift; sourceTree = "<group>"; };
+		E962D23C22A7FE3700EDD19F /* animation-w80-h80.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w80-h80.json"; sourceTree = "<group>"; };
+		E962D23D22A7FE3700EDD19F /* successOk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = successOk.json; sourceTree = "<group>"; };
+		E962D24322A809B500EDD19F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E962D24622A845FF00EDD19F /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		E962D24822A847E200EDD19F /* ContactUsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPageViewController.swift; sourceTree = "<group>"; };
+		E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelViewController.swift; sourceTree = "<group>"; };
+		E962D24E22A974D900EDD19F /* SAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAButton.swift; sourceTree = "<group>"; };
 		E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInAlbum.swift; sourceTree = "<group>"; };
 		E9A7D21922A29C950052EE42 /* loadingS3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS3.json; sourceTree = "<group>"; };
@@ -51,6 +70,9 @@
 		E9A7D21B22A29C950052EE42 /* loadingS4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS4.json; sourceTree = "<group>"; };
 		E9A7D21C22A29C950052EE42 /* loadingS5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS5.json; sourceTree = "<group>"; };
 		E9A7D21D22A29C960052EE42 /* loadingS2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS2.json; sourceTree = "<group>"; };
+		E9A7D22322A449380052EE42 /* autoPlayOff.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = autoPlayOff.js; sourceTree = "<group>"; };
+		E9A7D22B22A47E810052EE42 /* htmlCode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = htmlCode.html; sourceTree = "<group>"; };
+		E9A7D23022A570030052EE42 /* autoPlayOffAfterReloadData.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = autoPlayOffAfterReloadData.js; sourceTree = "<group>"; };
 		E9FD2FF522970B5400C6832A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,24 +110,25 @@
 			isa = PBXGroup;
 			children = (
 				17499214223541E300D43D54 /* AppDelegate.swift */,
-				17499216223541E300D43D54 /* LoginViewController.swift */,
-				E9034B45229C5B24008AFF2E /* MainViewController.swift */,
-				E9034B47229C5BFF008AFF2E /* Event.swift */,
-				E9034B49229C5C07008AFF2E /* EventViewCell.swift */,
-				E9FD2FF522970B5400C6832A /* PhotoViewController.swift */,
-				E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */,
-				E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */,
 				17499218223541E300D43D54 /* Main.storyboard */,
+				1749921B223541E400D43D54 /* Assets.xcassets */,
+				17499216223541E300D43D54 /* LoginViewController.swift */,
+				E962D24022A7FE4C00EDD19F /* Main Page */,
+				E962D24122A7FEA000EDD19F /* Photo Album Page */,
+				E962D24222A7FF3100EDD19F /* Login Manager Page */,
+				E962D24522A845C900EDD19F /* About Us Page */,
+				E962D24A22A847EF00EDD19F /* Contact Us Page */,
+				E962D24D22A84B7E00EDD19F /* Control Panel Page */,
+				E9A7D23022A570030052EE42 /* autoPlayOffAfterReloadData.js */,
 				E9A7D21A22A29C950052EE42 /* loadingS1.json */,
 				E9A7D21D22A29C960052EE42 /* loadingS2.json */,
 				E9A7D21922A29C950052EE42 /* loadingS3.json */,
 				E9A7D21B22A29C950052EE42 /* loadingS4.json */,
-				E9A7D21C22A29C950052EE42 /* loadingS5.json */,
-				1749921B223541E400D43D54 /* Assets.xcassets */,
 				17E116D622354384001D1CA9 /* ProfileViewController.swift */,
 				17B6DE39224C716C00D7F298 /* MainNavigationController.swift */,
 				1749921D223541E400D43D54 /* LaunchScreen.storyboard */,
 				17499220223541E400D43D54 /* Info.plist */,
+				E962D24322A809B500EDD19F /* GoogleService-Info.plist */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -125,6 +148,64 @@
 				3D6C9314AD94195A44BE31AB /* Pods-LoginTest.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E962D24022A7FE4C00EDD19F /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				E9034B45229C5B24008AFF2E /* MainViewController.swift */,
+				E9A7D21C22A29C950052EE42 /* loadingS5.json */,
+				E9034B49229C5C07008AFF2E /* EventViewCell.swift */,
+				E9A7D22B22A47E810052EE42 /* htmlCode.html */,
+				E9A7D22322A449380052EE42 /* autoPlayOff.js */,
+				E9034B47229C5BFF008AFF2E /* Event.swift */,
+			);
+			path = "Main Page";
+			sourceTree = "<group>";
+		};
+		E962D24122A7FEA000EDD19F /* Photo Album Page */ = {
+			isa = PBXGroup;
+			children = (
+				E9FD2FF522970B5400C6832A /* PhotoViewController.swift */,
+				E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */,
+				E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */,
+			);
+			path = "Photo Album Page";
+			sourceTree = "<group>";
+		};
+		E962D24222A7FF3100EDD19F /* Login Manager Page */ = {
+			isa = PBXGroup;
+			children = (
+				E962D23A22A7FE0500EDD19F /* LoginFirebaseViewController.swift */,
+				E962D23D22A7FE3700EDD19F /* successOk.json */,
+				E962D23C22A7FE3700EDD19F /* animation-w80-h80.json */,
+			);
+			path = "Login Manager Page";
+			sourceTree = "<group>";
+		};
+		E962D24522A845C900EDD19F /* About Us Page */ = {
+			isa = PBXGroup;
+			children = (
+				E962D24622A845FF00EDD19F /* AboutUsViewController.swift */,
+			);
+			path = "About Us Page";
+			sourceTree = "<group>";
+		};
+		E962D24A22A847EF00EDD19F /* Contact Us Page */ = {
+			isa = PBXGroup;
+			children = (
+				E962D24822A847E200EDD19F /* ContactUsPageViewController.swift */,
+				E962D24E22A974D900EDD19F /* SAButton.swift */,
+			);
+			path = "Contact Us Page";
+			sourceTree = "<group>";
+		};
+		E962D24D22A84B7E00EDD19F /* Control Panel Page */ = {
+			isa = PBXGroup;
+			children = (
+				E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */,
+			);
+			path = "Control Panel Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,13 +269,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1749921F223541E400D43D54 /* LaunchScreen.storyboard in Resources */,
+				E962D24422A809B500EDD19F /* GoogleService-Info.plist in Resources */,
 				E9A7D22222A29C960052EE42 /* loadingS2.json in Resources */,
+				E9A7D22422A449380052EE42 /* autoPlayOff.js in Resources */,
+				E9A7D23122A570030052EE42 /* autoPlayOffAfterReloadData.js in Resources */,
 				E9A7D22122A29C960052EE42 /* loadingS5.json in Resources */,
+				E9A7D22C22A47E810052EE42 /* htmlCode.html in Resources */,
 				E9A7D22022A29C960052EE42 /* loadingS4.json in Resources */,
 				1749921C223541E400D43D54 /* Assets.xcassets in Resources */,
 				E9A7D21E22A29C960052EE42 /* loadingS3.json in Resources */,
 				E9A7D21F22A29C960052EE42 /* loadingS1.json in Resources */,
 				1749921A223541E300D43D54 /* Main.storyboard in Resources */,
+				E962D23E22A7FE3700EDD19F /* animation-w80-h80.json in Resources */,
+				E962D23F22A7FE3700EDD19F /* successOk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,10 +327,14 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -257,10 +348,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,14 +369,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E962D24922A847E200EDD19F /* ContactUsPageViewController.swift in Sources */,
 				17E116D722354384001D1CA9 /* ProfileViewController.swift in Sources */,
+				E962D24C22A84B7000EDD19F /* ControlPanelViewController.swift in Sources */,
 				E9A7D20A22A1B0B60052EE42 /* PhotoInAlbum.swift in Sources */,
+				E962D24F22A974D900EDD19F /* SAButton.swift in Sources */,
 				17499217223541E300D43D54 /* LoginViewController.swift in Sources */,
 				17B6DE3A224C716C00D7F298 /* MainNavigationController.swift in Sources */,
+				E962D24722A845FF00EDD19F /* AboutUsViewController.swift in Sources */,
 				E9034B4A229C5C08008AFF2E /* EventViewCell.swift in Sources */,
 				E9034B46229C5B24008AFF2E /* MainViewController.swift in Sources */,
 				E9A7D20622A1A8200052EE42 /* PhotoCollectionViewCell.swift in Sources */,
 				17499215223541E300D43D54 /* AppDelegate.swift in Sources */,
+				E962D23B22A7FE0500EDD19F /* LoginFirebaseViewController.swift in Sources */,
 				E9034B48229C5C00008AFF2E /* Event.swift in Sources */,
 				E9FD2FF622970B5400C6832A /* PhotoViewController.swift in Sources */,
 			);
@@ -441,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pavelpetrenko.Facebook-login-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pavelpetrenko.Facebook-loginTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
@@ -463,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pavelpetrenko.Facebook-login-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pavelpetrenko.Facebook-loginTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
