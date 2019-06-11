@@ -26,6 +26,10 @@
 		E962D24922A847E200EDD19F /* ContactUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24822A847E200EDD19F /* ContactUsPageViewController.swift */; };
 		E962D24C22A84B7000EDD19F /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */; };
 		E962D24F22A974D900EDD19F /* SAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962D24E22A974D900EDD19F /* SAButton.swift */; };
+		E97E491222ABF87E00A075E5 /* AgudaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E491122ABF87E00A075E5 /* AgudaCollectionViewCell.swift */; };
+		E97E491422ABF9B600A075E5 /* AgudaCellBluePrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E491322ABF9B600A075E5 /* AgudaCellBluePrint.swift */; };
+		E97E491622AD428200A075E5 /* UploadPicForAboutUsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E491522AD428200A075E5 /* UploadPicForAboutUsCollection.swift */; };
+		E97E491822AD7C8500A075E5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E491722AD7C8500A075E5 /* TableViewCell.swift */; };
 		E9A7D20622A1A8200052EE42 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */; };
 		E9A7D20A22A1B0B60052EE42 /* PhotoInAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */; };
 		E9A7D21E22A29C960052EE42 /* loadingS3.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7D21922A29C950052EE42 /* loadingS3.json */; };
@@ -63,6 +67,10 @@
 		E962D24822A847E200EDD19F /* ContactUsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsPageViewController.swift; sourceTree = "<group>"; };
 		E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelViewController.swift; sourceTree = "<group>"; };
 		E962D24E22A974D900EDD19F /* SAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAButton.swift; sourceTree = "<group>"; };
+		E97E491122ABF87E00A075E5 /* AgudaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgudaCollectionViewCell.swift; sourceTree = "<group>"; };
+		E97E491322ABF9B600A075E5 /* AgudaCellBluePrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgudaCellBluePrint.swift; sourceTree = "<group>"; };
+		E97E491522AD428200A075E5 /* UploadPicForAboutUsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPicForAboutUsCollection.swift; sourceTree = "<group>"; };
+		E97E491722AD7C8500A075E5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E9A7D20522A1A8200052EE42 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9A7D20922A1B0B60052EE42 /* PhotoInAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInAlbum.swift; sourceTree = "<group>"; };
 		E9A7D21922A29C950052EE42 /* loadingS3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingS3.json; sourceTree = "<group>"; };
@@ -187,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				E962D24622A845FF00EDD19F /* AboutUsViewController.swift */,
+				E97E491122ABF87E00A075E5 /* AgudaCollectionViewCell.swift */,
+				E97E491322ABF9B600A075E5 /* AgudaCellBluePrint.swift */,
 			);
 			path = "About Us Page";
 			sourceTree = "<group>";
@@ -204,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				E962D24B22A84B7000EDD19F /* ControlPanelViewController.swift */,
+				E97E491522AD428200A075E5 /* UploadPicForAboutUsCollection.swift */,
+				E97E491722AD7C8500A075E5 /* TableViewCell.swift */,
 			);
 			path = "Control Panel Page";
 			sourceTree = "<group>";
@@ -370,7 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E962D24922A847E200EDD19F /* ContactUsPageViewController.swift in Sources */,
+				E97E491222ABF87E00A075E5 /* AgudaCollectionViewCell.swift in Sources */,
+				E97E491622AD428200A075E5 /* UploadPicForAboutUsCollection.swift in Sources */,
 				17E116D722354384001D1CA9 /* ProfileViewController.swift in Sources */,
+				E97E491822AD7C8500A075E5 /* TableViewCell.swift in Sources */,
 				E962D24C22A84B7000EDD19F /* ControlPanelViewController.swift in Sources */,
 				E9A7D20A22A1B0B60052EE42 /* PhotoInAlbum.swift in Sources */,
 				E962D24F22A974D900EDD19F /* SAButton.swift in Sources */,
@@ -379,6 +394,7 @@
 				E962D24722A845FF00EDD19F /* AboutUsViewController.swift in Sources */,
 				E9034B4A229C5C08008AFF2E /* EventViewCell.swift in Sources */,
 				E9034B46229C5B24008AFF2E /* MainViewController.swift in Sources */,
+				E97E491422ABF9B600A075E5 /* AgudaCellBluePrint.swift in Sources */,
 				E9A7D20622A1A8200052EE42 /* PhotoCollectionViewCell.swift in Sources */,
 				17499215223541E300D43D54 /* AppDelegate.swift in Sources */,
 				E962D23B22A7FE0500EDD19F /* LoginFirebaseViewController.swift in Sources */,

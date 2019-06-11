@@ -440,18 +440,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-Zp-Yd7">
-                                        <rect key="frame" x="0.0" y="647" width="270" height="44"/>
-                                        <color key="backgroundColor" red="0.17091485519999999" green="0.26110606860000002" blue="0.4484668235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <state key="normal" title="Logout">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fbSideMenuLogOutBtn:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="d4x-XX-rE9"/>
-                                            <action selector="logoutBtnClicked:" destination="eKw-dp-zLg" eventType="touchUpInside" id="VKL-hw-aO2"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sideLogoAguda" translatesAutoresizingMaskIntoConstraints="NO" id="j90-BJ-dJB">
                                         <rect key="frame" x="0.0" y="8" width="270" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -459,12 +447,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="LUe-Zp-Yd7" firstAttribute="leading" secondItem="vpu-ux-Ukc" secondAttribute="leading" id="3pg-oF-KAK"/>
-                                    <constraint firstAttribute="bottom" secondItem="LUe-Zp-Yd7" secondAttribute="bottom" constant="113" id="Fbh-nB-XoQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="LUe-Zp-Yd7" secondAttribute="trailing" id="cSQ-QK-paa"/>
-                                    <constraint firstAttribute="bottom" secondItem="LUe-Zp-Yd7" secondAttribute="bottom" constant="113" id="rz3-Z9-Fxm"/>
-                                    <constraint firstAttribute="trailing" secondItem="LUe-Zp-Yd7" secondAttribute="trailing" id="uFd-Kl-2yT"/>
-                                    <constraint firstItem="LUe-Zp-Yd7" firstAttribute="leading" secondItem="vpu-ux-Ukc" secondAttribute="leading" id="zXv-H4-PVi"/>
                                     <constraint firstAttribute="width" constant="270" id="zsh-HF-KP5"/>
                                 </constraints>
                             </view>
@@ -571,6 +553,110 @@
                                     <navigationItem title="Facebook Posts" id="E8z-Vh-c2X"/>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מס' טלפון חדש של משרד" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HF9-QG-caF" userLabel="NumberOfCellular">
+                                <rect key="frame" x="119" y="179" width="177" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אמייל מאפליקציה לאגודה" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00b-w5-2e2" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="119" y="217" width="177" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום א'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4j-2c-ZGO" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="255" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ב'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2P-e7-DI0" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="293" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ג'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-GH-ril" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="331" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ד'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PA-pS-k5c" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="369" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ה'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgF-fG-P7Y" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="407" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ו'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-v9-m9h" userLabel="EmailNameOfOffice">
+                                <rect key="frame" x="176" y="445" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxI-eb-s5b">
+                                <rect key="frame" x="184" y="497" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="לשנות">
+                                    <color key="titleColor" red="0.0" green="0.45803206689999998" blue="0.97501627599999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createNewDataOnContactUsBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="nCF-23-fEg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-QQ-oCi">
+                                <rect key="frame" x="164" y="150" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-V0-1Yg" userLabel="Drop Down View">
+                                <rect key="frame" x="0.0" y="605" width="414" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGR-Ex-Ad4">
+                                        <rect key="frame" x="87" y="25" width="240" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DropDownRowCell" rowHeight="79" id="8c4-ND-1wi">
+                                                <rect key="frame" x="0.0" y="28" width="240" height="79"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8c4-ND-1wi" id="r4w-i3-G8m">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="78.666666666666671"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB1-yP-ieI">
+                                <rect key="frame" x="184" y="567" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="oepnHideView:" destination="53U-8U-VIs" eventType="touchUpInside" id="2es-Eu-08Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CJp-MH-vtI"/>
@@ -578,6 +664,15 @@
                     <connections>
                         <outlet property="controlNavigationBarFacebookPosts" destination="RS8-Qc-Ly6" id="KAg-fT-hgg"/>
                         <outlet property="controlPanelnavigationItem" destination="E8z-Vh-c2X" id="Waj-A7-yjM"/>
+                        <outlet property="dropDownView" destination="oOT-V0-1Yg" id="mO8-Qc-nMc"/>
+                        <outlet property="newEmailOfficeLbl" destination="00b-w5-2e2" id="CSh-Dx-Iez"/>
+                        <outlet property="newOfficePhoneLbl" destination="HF9-QG-caF" id="71v-T7-nbQ"/>
+                        <outlet property="openHoursYomALbl" destination="j4j-2c-ZGO" id="ELz-oB-BGa"/>
+                        <outlet property="openHoursYomBLbl" destination="n2P-e7-DI0" id="wWW-qM-doa"/>
+                        <outlet property="openHoursYomCLbl" destination="HgX-GH-ril" id="DdH-WG-Sbd"/>
+                        <outlet property="openHoursYomDLbl" destination="3PA-pS-k5c" id="HhZ-SX-iOt"/>
+                        <outlet property="openHoursYomELbl" destination="dgF-fG-P7Y" id="GV0-me-5BZ"/>
+                        <outlet property="openHoursYomFLbl" destination="Ih7-v9-m9h" id="71s-4t-rNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etp-nY-ayA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,6 +687,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgg-D3-5eW" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-cH-Ucy">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="302"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vr8-jJ-OEi">
+                                            <size key="itemSize" width="157" height="272"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AgudaPhotoCell" id="gOz-VT-8Ah" customClass="AgudaCollectionViewCell" customModule="LoginTest" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="15" width="157" height="272"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="272"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="יו&quot;ר אגודת הסטודנטים" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-RF-uQy">
+                                                            <rect key="frame" x="20" y="196" width="113" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-AZ-aSQ">
+                                                            <rect key="frame" x="3" y="20" width="150" height="150"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="בעזריאלי" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-jn-NXi">
+                                                            <rect key="frame" x="9" y="216" width="92" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.97647058819999999" green="0.76862745099999996" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="איתי גבאי" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOV-ce-aAC">
+                                                            <rect key="frame" x="36" y="174" width="85" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="nameOfResidentOfAguda" destination="XOV-ce-aAC" id="TAS-A7-XC8"/>
+                                                    <outlet property="photoOfResidentOfAguda" destination="zTI-AZ-aSQ" id="egV-aF-FDJ"/>
+                                                    <outlet property="proffessionOfResidentOfAguda" destination="E7x-RF-uQy" id="I20-xa-peJ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="מי אנחנו?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dge-bJ-Yoh">
+                                        <rect key="frame" x="152" y="391" width="111" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA7-rB-eo4" userLabel="BackGround Text View">
+                                        <rect key="frame" x="0.0" y="448" width="414" height="406"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newShapeForWhoAreWe" translatesAutoresizingMaskIntoConstraints="NO" id="0g5-LQ-TBJ">
+                                                <rect key="frame" x="8" y="0.0" width="398" height="406"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-1Y-Diq">
+                                                <rect key="frame" x="41" y="24" width="332" height="357"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <string key="text">אגודת סטודנטים
+קפיצה לניווטקפיצה לחיפוש
+אגודת סטודנטים, נקראת לפעמים גם התאחדות סטודנטים, היא ארגון המוקם על ידי סטודנטים במוסד אקדמי, על מנת לדאוג לזכויותיהם, רווחתם וטובתם של הסטודנטים, ועל מנת להגן במשותף על האינטרסים המשותפים להם ומטרותיהם המשותפות.
+
+מרבית אגודות הסטודנטים מוקמות ומופעלות על ידי קבוצת סטודנטים שלומדים באותו מוסד שבו קמה ופועלת האגודה. ראשי האגודה נבחרים בבחירות דמוקרטיות על ידי כלל הסטודנטים החברים באגודה. באגודות סטודנטים רבות, חברי האגודה, שהם מרבית הסטודנטים הלומדים במוסד האקדמי, משלמים דמי חבר שנתיים, והתקציב מחולק בהתאם להקצאות שנקבעות בישיבות תקציב של האגודה.
+
+פעמים רבות, בעיקר במשטרים דמוקרטיים, האגודה עוסקת גם בעניינים פוליטיים לאומיים שלא קשורים ישירות לסטודנטים. כך הופכים הסטודנטים לגוף חברתי פעיל במישור הלאומי, על ידי פעילויות שונות בקרב האוכלוסייה, הפגנות, השפעה על ממשלות ופרלמנטים במדינות שבהן הם פועלים (לדוגמה, אירועי מאי 1968 בצרפת, נגד מלחמת וייטנאם בארצות הברית וכן במקומות רבים נוספים בעולם). לא אחת, אגודות סטודנטים מהוות כר פורה להתפתחותם של פוליטיקאים צעירים, ואלה, לאחר שצברו ניסיון בפוליטיקה באגודת הסטודנטים, עוברים לזירות מתקדמות יותר.
+
+עם זאת, המטרה העיקרית של אגודת סטודנטים היא לדאוג לשיפור תנאיהם של הסטודנטים (כגון מעונות סטודנטים, קפיטריות וכו'), לייצוג הולם של הסטודנטים מול הנהלת המוסד האקדמי שבו הם לומדים (עזרה בערעור על החלטות הדרג האקדמי והמנהלי באוניברסיטה, ייצוג משפטי לסטודנט מול האוניברסיטה וכו'), לארגון פעילויות לרווחת הסטודנטים (כגון מסיבות, ירידים), ליצירת איגוד כלכלי של הסטודנטים על מנת להקנות להם הנחות ולחזק את כוחם הכלכלי וכו'.
+
+במקרים רבים, אגודות סטודנטים במוסדות אקדמיים נפרדים מאוגדות בעצמן באגודות־על, כגון אגודות והתאחדויות סטודנטים מחוזיות או ארציות. מנגנון פוליטי זה מאפשר לעיתים לאגודות לטפל במטרות המשותפות לכל הסטודנטים במספר מוסדות לימוד באותו אזור או באותה מדינה, באמצעות יצירת גוף־על גדול יותר ובעל כוח רב יותר מאשר הגופים המקומיים.</string>
+                                                <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exh-1v-gJe">
+                                        <rect key="frame" x="292" y="385" width="80" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Load Image">
+                                            <color key="titleColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadImageBtn:" destination="QbS-hf-8gO" eventType="touchUpInside" id="P4H-UZ-PHf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5I-1q-pNj">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -617,12 +818,25 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jgg-D3-5eW" firstAttribute="leading" secondItem="YVf-7S-sME" secondAttribute="leading" id="3GF-QX-9hU"/>
+                            <constraint firstItem="Jgg-D3-5eW" firstAttribute="top" secondItem="Cqn-nJ-u8A" secondAttribute="top" id="7v5-i7-h4W"/>
+                            <constraint firstItem="Jgg-D3-5eW" firstAttribute="trailing" secondItem="YVf-7S-sME" secondAttribute="trailing" id="dQ3-ee-44y"/>
+                            <constraint firstAttribute="bottom" secondItem="Jgg-D3-5eW" secondAttribute="bottom" id="pzR-E4-LuR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YVf-7S-sME"/>
                     </view>
+                    <connections>
+                        <outlet property="backGroundView" destination="Cqn-nJ-u8A" id="6LA-Rb-TL1"/>
+                        <outlet property="collectionViewOfAllAguda" destination="7LY-cH-Ucy" id="t7O-GO-M7j"/>
+                        <outlet property="shapeAroundTheTextImg" destination="0g5-LQ-TBJ" id="VeS-KF-YHo"/>
+                        <outlet property="whoAreWeBigText" destination="VQ1-1Y-Diq" id="EIM-db-1ha"/>
+                        <outlet property="whoAreWeLbl" destination="Dge-bJ-Yoh" id="OG8-fC-IDK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9N-3O-XLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="122"/>
+            <point key="canvasLocation" x="1508.6956521739132" y="121.875"/>
         </scene>
         <!--Contact Us Page View Controller-->
         <scene sceneID="Cto-bC-Nna">
@@ -1003,6 +1217,7 @@
         <image name="loginScreenBckgrnd" width="1150" height="2500"/>
         <image name="menuIcon" width="449" height="321"/>
         <image name="messenger" width="2400" height="2414"/>
+        <image name="newShapeForWhoAreWe" width="1575" height="1575"/>
         <image name="paper_plane_contactUsPageBackground" width="512" height="384"/>
         <image name="roudForCelularInfo" width="2400" height="2400"/>
         <image name="roudLIttleShapeWithLinesForContactUsBackGround" width="2400" height="2400"/>

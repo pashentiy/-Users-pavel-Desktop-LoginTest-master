@@ -177,6 +177,8 @@ class MainViewController: UIViewController, AdminMode {
         }
     }
     
+    
+    //need to delete
     //Facebook LogOut Button
     @IBAction func fbSideMenuLogOutBtn(_ sender: Any) {
         print("****** current Acces token ",AccessToken.current)
@@ -600,7 +602,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate{
         // cell.textLabel?.numberOfLines = 0
         
         //cell now is unselectable
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
 //        space between the cells
         cell.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)

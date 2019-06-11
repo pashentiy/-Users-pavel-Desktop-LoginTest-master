@@ -53,7 +53,9 @@ class ContactUsPageViewController: UIViewController {
             print("value NSDICTIONARY 1 ", officeInfo)
             
             let officeNumber = officeInfo?["officeNumber"] as? String ?? ""
-            self.mobileLabel.text = officeNumber
+            
+            // WHY AFTER I EDIT THE UPDATE NUMBER I FOUND NIL When I Prompt To call
+           // self.mobileLabel.text = officeNumber
             print("officeNumber String ", officeNumber)
 
             let officeEmail = officeInfo?["officeEmail"] as? String ?? ""

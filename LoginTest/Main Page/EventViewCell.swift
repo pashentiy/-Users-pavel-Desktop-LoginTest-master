@@ -28,6 +28,8 @@ class EventViewCell: UITableViewCell {
         if(event.doesThisEventContainVideo == "yes"){
             //for video test you can put this url https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
             imageEventCell.isHidden = true
+            
+            
             let videoURL = URL(string: event.urlOFImageInPost)
             
             
@@ -77,6 +79,17 @@ class EventViewCell: UITableViewCell {
             webVideoView.isHidden = false
             }
         }
+        
+        var string = event.description
+        
+        //detecting url into the array work with an extension below the class
+           let myUrlFromString = string.extractURLs()
+            print("yes it's contain and this is my url from string ", myUrlFromString)
+            
+        var attributedString = NSMutableAttributedString(string: string, attributes:[NSAttributedString.Key.link: URL(string: "http://www.google.com")!])
+//
+        descriptionEventCell.attributedText = attributedString
+        
         descriptionEventCell.text = event.description
        
 
@@ -141,4 +154,20 @@ class EventViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+extension String {
+    func extractURLs() -> [URL] {
+        var urls : [URL] = []
+        do {
+            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+            detector.enumerateMatches(in: self, options: [], range: NSMakeRange(0, self.count), using: { (result, _, _) in
+                if let match = result, let url = match.url {
+                    urls.append(url)
+                }
+            })
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        return urls
+    }
 }
