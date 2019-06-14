@@ -11,7 +11,7 @@
 //import FirebaseDatabase
 //import FirebaseStorage
 //
-//class UploadPicForAboutUsCollection: ControlPanelViewController{
+//class UploadPicForAboutUsCollection: UIViewController{
 //    
 //    //to upload pic
 //    let imagePicker = UIImagePickerController()

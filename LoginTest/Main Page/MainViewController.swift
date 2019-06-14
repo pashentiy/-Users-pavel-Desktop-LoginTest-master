@@ -499,7 +499,7 @@ class MainViewController: UIViewController, AdminMode {
     @IBAction func sideMenuView(_ sender: UIButton) {
         print("BUTTON WAS PRESSED ON SIDE MENU " ,sender.tag)
         
-        if sender.tag == 0 || sender.tag == 1 || sender.tag == 2 || sender.tag == 3 || sender.tag == 4 || sender.tag == 5 {
+        if sender.tag == 0 || sender.tag == 1 || sender.tag == 2 || sender.tag == 3 || sender.tag == 4 || sender.tag == 5 || sender.tag == 6 {
             openMenuBtn.isHidden = false
             exitMenuBtn.isHidden = true
             sideMenuLeadingConstraints.constant = -290

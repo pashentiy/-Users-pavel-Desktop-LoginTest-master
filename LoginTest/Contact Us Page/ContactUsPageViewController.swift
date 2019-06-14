@@ -38,8 +38,67 @@ class ContactUsPageViewController: UIViewController {
         tap.delegate = self as? UIGestureRecognizerDelegate
         mobileLabel.addGestureRecognizer(tap)
 
+        
+        getDataFromFireBaseTest()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
+    
+    
+    //fun for about us page
+    
+    
+    
+    func getDataFromFireBaseTest(){
+        
+        Database.database().reference().child("aboutUsPage/agudaOfficeProfessionalSkills").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            //            let value = snapshot.value as? String
+            //            print("value String ", value)
+            if ( snapshot.value is NSNull ) {
+                
+                // DATA WAS NOT FOUND
+                print("– – – Data was not found – – –")
+            }
+            else{
+                
+                let officeResidentDictionaryInfo = snapshot.value as? NSDictionary
+                print("value officeResidentDictionaryInfo 1 ", officeResidentDictionaryInfo![0])
+//                if officeResidentDictionaryInfo[0] == "dovrotVeHasbara"{
+//                    print("FOUND THE TAFKID")
+//                }
+                for professionSnapshot in snapshot.children{
+                    print(" NEW ", professionSnapshot)
+                    
+                    
+                    let restDict = professionSnapshot as! DataSnapshot
+                    let dict = restDict.value as! [String: String?]
+                    
+                    // DEFINE VARIABLES FOR LABELS
+                    let nameOfResident = dict["name"] as? String ?? ""
+                    let professionOfResident = dict["profession"] as? String ?? ""
+                    let imageUrl = dict["imageUrl"] as? String ?? ""
+                    
+                    print("THE RENEW DICTIONARY ",restDict)
+                    print("THE dict value ", dict)
+                    print("nameOfResident ",nameOfResident)
+                    print("proffesionOfResident ", professionOfResident)
+                    print("imageUrl ", imageUrl)
+                    
+                    
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    
+    }
+    
+    
     
     func getDataFromFireBaseAndDisplay(){
         
