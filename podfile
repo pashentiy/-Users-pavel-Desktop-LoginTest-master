@@ -21,7 +21,10 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage' 
 pod 'Firebase/Analytics'
+<<<<<<< HEAD
 
 pod 'ActiveLabel','~>1.0.1'
+=======
+>>>>>>> 1372ba1c7c37613cf8aa7125dd2d7571dc8e661c
 
 end
