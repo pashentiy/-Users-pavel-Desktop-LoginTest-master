@@ -283,7 +283,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="300" id="HyJ-ea-0ZH" customClass="EventViewCell" customModule="LoginTest" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="300" id="HyJ-ea-0ZH" customClass="EventViewCell" customModule="LoginTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HyJ-ea-0ZH" id="Rab-jc-am5">
@@ -301,8 +301,11 @@
                                                         <constraint firstAttribute="width" constant="414" id="zck-zs-CNA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAr-EA-feI">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAr-EA-feI" customClass="ActiveLabel" customModule="ActiveLabel">
                                                     <rect key="frame" x="5" y="220.99999999999997" width="404" height="73.666666666666657"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" button="YES" link="YES" selected="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -323,6 +326,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="contentViewAllPostsInside" destination="Rab-jc-am5" id="nnK-S4-xE6"/>
                                             <outlet property="descriptionEventCell" destination="HAr-EA-feI" id="gXS-qu-WDq"/>
                                             <outlet property="imageEventCell" destination="q4U-GB-ZU8" id="L68-TK-ZvG"/>
                                             <outlet property="webVideoView" destination="GCI-27-Fxv" id="dCD-4l-DPO"/>
@@ -397,8 +401,20 @@
                                             <segue destination="Fd2-IM-RN4" kind="showDetail" identifier="LoginFirebaseViewController" id="Q92-KM-gSQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3d-if-sAX">
+                                        <rect key="frame" x="0.0" y="405" width="270" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92549019607843142" green="0.12549019607843137" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
+                                        <state key="normal" title="מרתונים">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sideMenuView:" destination="hcY-KH-AfQ" eventType="touchUpInside" id="ZLc-dC-y0K"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exo-ol-haI" userLabel="Control Panel Page">
-                                        <rect key="frame" x="0.0" y="403" width="270" height="32.822053738825048"/>
+                                        <rect key="frame" x="0.0" y="468" width="270" height="32.822053738825048"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92549019607843142" green="0.12549019607843137" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
@@ -430,19 +446,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogInIcon" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-2q-5GH">
-                                        <rect key="frame" x="8" y="341" width="35" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ControlPanelIcon" translatesAutoresizingMaskIntoConstraints="NO" id="tOd-tn-L5X">
-                                        <rect key="frame" x="8" y="404" width="35" height="33"/>
+                                        <rect key="frame" x="8" y="468" width="35" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sideLogoAguda" translatesAutoresizingMaskIntoConstraints="NO" id="j90-BJ-dJB">
                                         <rect key="frame" x="0.0" y="8" width="270" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogInIcon" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-2q-5GH">
+                                        <rect key="frame" x="8" y="340" width="35" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -511,17 +527,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lds-cx-qtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-986" y="122"/>
+            <point key="canvasLocation" x="-986.95652173913049" y="121.875"/>
         </scene>
         <!--Control Panel View Controller-->
         <scene sceneID="M24-Jh-LqR">
             <objects>
                 <viewController storyboardIdentifier="ControlPanelViewController" id="53U-8U-VIs" customClass="ControlPanelViewController" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RlS-4p-eHr">
+                    <view key="view" contentMode="scaleToFill" id="RlS-4p-eHr" userLabel="BackgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Qn-id1">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xa1-xs-7MP" userLabel="Contact Us Page View">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-QQ-oCi">
+                                        <rect key="frame" x="136" y="75" width="86" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום א'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4j-2c-ZGO" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ב'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2P-e7-DI0" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ג'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-GH-ril" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ד'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PA-pS-k5c" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ה'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgF-fG-P7Y" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ו'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-v9-m9h" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="115" y="269" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מס' טלפון חדש של משרד" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HF9-QG-caF" userLabel="NumberOfCellular">
+                                        <rect key="frame" x="87" y="269" width="177" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אמייל מאפליקציה לאגודה" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00b-w5-2e2" userLabel="EmailNameOfOffice">
+                                        <rect key="frame" x="87" y="269" width="177" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxI-eb-s5b">
+                                        <rect key="frame" x="153" y="332" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="לשנות">
+                                            <color key="titleColor" red="0.0" green="0.45803206689999998" blue="0.97501627599999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createNewDataOnContactUsBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="nCF-23-fEg"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avP-il-Oyi">
+                                        <rect key="frame" x="50" y="133" width="254" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="אנא בחר שינוי רצוי" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlW-oj-PHK">
+                                        <rect key="frame" x="50" y="104" width="254" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-Qn-id1" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -546,125 +654,116 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.12549019610000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-Qc-Ly6">
-                                <rect key="frame" x="0.0" y="100" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Facebook Posts" id="E8z-Vh-c2X"/>
-                                </items>
-                            </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מס' טלפון חדש של משרד" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HF9-QG-caF" userLabel="NumberOfCellular">
-                                <rect key="frame" x="119" y="179" width="177" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="אמייל מאפליקציה לאגודה" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00b-w5-2e2" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="119" y="217" width="177" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום א'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4j-2c-ZGO" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="255" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ב'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2P-e7-DI0" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="293" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ג'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-GH-ril" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="331" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ד'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PA-pS-k5c" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="369" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ה'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgF-fG-P7Y" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="407" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שעות פתיחה יום ו'" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-v9-m9h" userLabel="EmailNameOfOffice">
-                                <rect key="frame" x="176" y="445" width="120" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxI-eb-s5b">
-                                <rect key="frame" x="184" y="497" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="לשנות">
-                                    <color key="titleColor" red="0.0" green="0.45803206689999998" blue="0.97501627599999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createNewDataOnContactUsBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="nCF-23-fEg"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-QQ-oCi">
-                                <rect key="frame" x="164" y="150" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-V0-1Yg" userLabel="Drop Down View">
-                                <rect key="frame" x="0.0" y="605" width="414" height="291"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxz-Oq-57i">
+                                <rect key="frame" x="-300" y="159" width="340" height="737"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGR-Ex-Ad4">
-                                        <rect key="frame" x="87" y="25" width="240" height="188"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-N0-Pnn">
+                                        <rect key="frame" x="134" y="19" width="72" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DropDownRowCell" rowHeight="79" id="8c4-ND-1wi">
-                                                <rect key="frame" x="0.0" y="28" width="240" height="79"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8c4-ND-1wi" id="r4w-i3-G8m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="78.666666666666671"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="אנא בחר מחלקה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C29-Du-6aR">
+                                        <rect key="frame" x="58" y="48" width="225" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwt-gl-5va">
+                                        <rect key="frame" x="56" y="85" width="226" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם של מחלקה רק אנגלית" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fR-bm-UCE">
+                                        <rect key="frame" x="58" y="171" width="224" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="שם של חבר אגודה חדש" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bfx-NN-nM4">
+                                        <rect key="frame" x="58" y="209" width="224" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="תפקיד באגודה" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4s-CW-P4P">
+                                        <rect key="frame" x="58" y="247" width="225" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-xT-vZa">
+                                        <rect key="frame" x="58" y="293" width="225" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Load Image"/>
+                                        <connections>
+                                            <action selector="loadImageBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="eoq-AS-RmM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgx-rw-Fet">
+                                        <rect key="frame" x="58" y="353" width="224" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="Check If You Did All Correctly"/>
+                                        <connections>
+                                            <action selector="aboutUsCheckingIfAllDataIsCorrectBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="Hdk-mz-bbD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-SJ-deR">
+                                        <rect key="frame" x="301" y="0.0" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92549019607843142" green="0.12549019607843137" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <state key="normal" image="backArrowButton">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openAboutUsViewBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="HpW-wp-Y7z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp6-EE-zXZ">
+                                        <rect key="frame" x="58" y="418" width="224" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Add New Resident"/>
+                                        <connections>
+                                            <action selector="addNewResidentIntoDBBtn:" destination="53U-8U-VIs" eventType="touchUpInside" id="aGc-I2-SZu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="iAZ-fe-G2P"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB1-yP-ieI">
-                                <rect key="frame" x="184" y="567" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="oepnHideView:" destination="53U-8U-VIs" eventType="touchUpInside" id="2es-Eu-08Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sxz-Oq-57i" secondAttribute="bottom" id="QvL-Gi-mX2"/>
+                            <constraint firstItem="sxz-Oq-57i" firstAttribute="leading" secondItem="CJp-MH-vtI" secondAttribute="leading" constant="-300" id="ULx-bc-45X"/>
+                            <constraint firstItem="sxz-Oq-57i" firstAttribute="top" secondItem="RlS-4p-eHr" secondAttribute="top" constant="159" id="vCZ-PY-wTq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CJp-MH-vtI"/>
                     </view>
                     <connections>
-                        <outlet property="controlNavigationBarFacebookPosts" destination="RS8-Qc-Ly6" id="KAg-fT-hgg"/>
-                        <outlet property="controlPanelnavigationItem" destination="E8z-Vh-c2X" id="Waj-A7-yjM"/>
-                        <outlet property="dropDownView" destination="oOT-V0-1Yg" id="mO8-Qc-nMc"/>
+                        <outlet property="aboutUsDivisionOfNewResident" destination="C29-Du-6aR" id="21m-j0-D8x"/>
+                        <outlet property="aboutUsDivisionOfNewResidentTextFieldMustBeOnlyEnglish" destination="2fR-bm-UCE" id="78y-Nh-WUG"/>
+                        <outlet property="aboutUsNameOfNewResident" destination="Bfx-NN-nM4" id="GSg-ps-UJr"/>
+                        <outlet property="aboutUsPageView" destination="sxz-Oq-57i" id="ZLA-GJ-RLn"/>
+                        <outlet property="aboutUsPageViewConstraints" destination="ULx-bc-45X" id="a0T-Pt-uR1"/>
+                        <outlet property="aboutUsProfessionOfNewResident" destination="C4s-CW-P4P" id="6Mn-ut-flU"/>
+                        <outlet property="addNewResidentBtn" destination="dp6-EE-zXZ" id="X7h-HP-Py3"/>
+                        <outlet property="backGroundView" destination="RlS-4p-eHr" id="eVd-ha-cy0"/>
+                        <outlet property="contactUsLabelForPresentPickerTitle" destination="FlW-oj-PHK" id="82Y-CR-Cqc"/>
+                        <outlet property="contactUsPagePicker" destination="avP-il-Oyi" id="hUe-4d-NOh"/>
                         <outlet property="newEmailOfficeLbl" destination="00b-w5-2e2" id="CSh-Dx-Iez"/>
                         <outlet property="newOfficePhoneLbl" destination="HF9-QG-caF" id="71v-T7-nbQ"/>
                         <outlet property="openHoursYomALbl" destination="j4j-2c-ZGO" id="ELz-oB-BGa"/>
@@ -673,6 +772,7 @@
                         <outlet property="openHoursYomDLbl" destination="3PA-pS-k5c" id="HhZ-SX-iOt"/>
                         <outlet property="openHoursYomELbl" destination="dgF-fG-P7Y" id="GV0-me-5BZ"/>
                         <outlet property="openHoursYomFLbl" destination="Ih7-v9-m9h" id="71s-4t-rNY"/>
+                        <outlet property="uiPickerOfDevisions" destination="nwt-gl-5va" id="EY8-BW-tay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etp-nY-ayA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,38 +858,48 @@
                                                 <rect key="frame" x="8" y="0.0" width="398" height="406"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-1Y-Diq">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-1Y-Diq">
                                                 <rect key="frame" x="41" y="24" width="332" height="357"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <string key="text">אגודת סטודנטים
-קפיצה לניווטקפיצה לחיפוש
-אגודת סטודנטים, נקראת לפעמים גם התאחדות סטודנטים, היא ארגון המוקם על ידי סטודנטים במוסד אקדמי, על מנת לדאוג לזכויותיהם, רווחתם וטובתם של הסטודנטים, ועל מנת להגן במשותף על האינטרסים המשותפים להם ומטרותיהם המשותפות.
+                                                <mutableString key="text">אגודת הסטודנטים בעזריאלי
+אגודת הסטודנטים היא הגוף המייצג את הסטודנטים במכללה בפני הנהלת המכללה בנושאים אקדמיים ואחרים, ופועלת בשיתוף פעולה עם המכללה ועם ארגונים נוספים. אגודת הסטודנטים שמה בראש ובראשונה את הסטודנטים ודואגת להם במגוון מישורים: אקדמיה ,רווחה, תרבות פנים וחוץ ,יזמות ,ספורט, ועוד.
+מחלקת האקדמיה דואגת לכל הקשור בפן האקדמי, טיפול בבעיות מול הסגל האקדמי ופיקוח כי חוקי התקנון מתקיימים.
+מחלקת רווחה פועלת לרווחת הסטודנטים תוך שמירה על תנאים סוציאליים במכללה ומחוצה לה.
+מחלקת תרבות דואגת להווי החברתי במכללה , גיבוש הסטודנטים , ימי כיף מסיבות וכו'.
+מחלקת יזמות אחראית על קידום וטיפוח נושא היזמות הטכנולוגית והחדשנות בקרב סטודנטים קיום האקתונים וסדנאות יזמות בשיתוף מול האקסלרטור וארגונים נוספים.
+מחלקת לוגיסטיקה ואוכלוסיות אחראית על מתן שירותים מיוחדים לכלל האוכלוסיות במכללה. בנוסף , מטרתה היא לשלב את כולם בכל פעילויות האגודה , לשמוע את כולם ולענות על צורכיהם. 
+מחלקת ספורט מספקת שלל פעילויות אשר יעלו לסדר היום את חשיבות הספורט לאורך חיים בריא וטוב. 
+נציגי אגודת הסטודנטים לשנת הלימודים תשע"ט:
+איתי גבאי, יו“ר,
+ yor.jce@gmail.com נוי לוי, סיו“ר,
+ syor.jce@gmail.com נעמי מטרי, גזברית,
+ gizbarut.jce@gmail.com דולי אזולאי, מנהלת המשרד,
+ office.jce@gmail.com חן פרידמן, רמ"ח דוברות והסברה,
+ dover.jce@gmail.com עמית ברזני, רמ"ח אקדמיה, 
+academy.jce@gmail.com עלי חרבאווי, רמ"ח לוגיסטיקה ואוכלוסיות,
+ populog.jce@gmail.com ספיר מרדכי, רמ"ח רווחה,
+  revaha.jce@gmail.com 
+דניאל גודמן, רמ"ח תרבות, 
+tarbut.jce@gmail.com אליאור יעקב, רמ"ח ספורט,
+  sport.jce@gmail.com קובי אמסלם , רמ"ח יזמות,
+ hackathon.jce@gmail.com
 
-מרבית אגודות הסטודנטים מוקמות ומופעלות על ידי קבוצת סטודנטים שלומדים באותו מוסד שבו קמה ופועלת האגודה. ראשי האגודה נבחרים בבחירות דמוקרטיות על ידי כלל הסטודנטים החברים באגודה. באגודות סטודנטים רבות, חברי האגודה, שהם מרבית הסטודנטים הלומדים במוסד האקדמי, משלמים דמי חבר שנתיים, והתקציב מחולק בהתאם להקצאות שנקבעות בישיבות תקציב של האגודה.
-
-פעמים רבות, בעיקר במשטרים דמוקרטיים, האגודה עוסקת גם בעניינים פוליטיים לאומיים שלא קשורים ישירות לסטודנטים. כך הופכים הסטודנטים לגוף חברתי פעיל במישור הלאומי, על ידי פעילויות שונות בקרב האוכלוסייה, הפגנות, השפעה על ממשלות ופרלמנטים במדינות שבהן הם פועלים (לדוגמה, אירועי מאי 1968 בצרפת, נגד מלחמת וייטנאם בארצות הברית וכן במקומות רבים נוספים בעולם). לא אחת, אגודות סטודנטים מהוות כר פורה להתפתחותם של פוליטיקאים צעירים, ואלה, לאחר שצברו ניסיון בפוליטיקה באגודת הסטודנטים, עוברים לזירות מתקדמות יותר.
-
-עם זאת, המטרה העיקרית של אגודת סטודנטים היא לדאוג לשיפור תנאיהם של הסטודנטים (כגון מעונות סטודנטים, קפיטריות וכו'), לייצוג הולם של הסטודנטים מול הנהלת המוסד האקדמי שבו הם לומדים (עזרה בערעור על החלטות הדרג האקדמי והמנהלי באוניברסיטה, ייצוג משפטי לסטודנט מול האוניברסיטה וכו'), לארגון פעילויות לרווחת הסטודנטים (כגון מסיבות, ירידים), ליצירת איגוד כלכלי של הסטודנטים על מנת להקנות להם הנחות ולחזק את כוחם הכלכלי וכו'.
-
-במקרים רבים, אגודות סטודנטים במוסדות אקדמיים נפרדים מאוגדות בעצמן באגודות־על, כגון אגודות והתאחדויות סטודנטים מחוזיות או ארציות. מנגנון פוליטי זה מאפשר לעיתים לאגודות לטפל במטרות המשותפות לכל הסטודנטים במספר מוסדות לימוד באותו אזור או באותה מדינה, באמצעות יצירת גוף־על גדול יותר ובעל כוח רב יותר מאשר הגופים המקומיים.</string>
+נשמח לעמוד לרשותכם לכל בעיה\בקשה\הצעה.
+ניתן לשלוח מייל לנציג המחלקה , או לפנות בדרכים הבאות: עמוד הפייסבוק שלנו – "אגדות הסטודנטים בעזריאלי"
+טלפון: 02-6591867
+מייל משרד : office.jce@gmail.com
+אינסטגרם : aguda.jce
+שעות פעילות משרד האגודה: ימים א'- ה' בין השעות:  09:00-14:00
+</mutableString>
                                                 <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exh-1v-gJe">
-                                        <rect key="frame" x="292" y="385" width="80" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Load Image">
-                                            <color key="titleColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loadImageBtn:" destination="QbS-hf-8gO" eventType="touchUpInside" id="P4H-UZ-PHf"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
@@ -943,16 +1053,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="roudForCelularInfo" translatesAutoresizingMaskIntoConstraints="NO" id="F2a-ul-m5M" userLabel="roundShapeForCellular">
-                                        <rect key="frame" x="23" y="37" width="212" height="53"/>
+                                        <rect key="frame" x="23" y="27" width="212" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="02-659-1867" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nup-H9-5pF">
-                                        <rect key="frame" x="75" y="42" width="112" height="24"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="02-659-1867" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-Cp-grz">
+                                        <rect key="frame" x="63" y="32" width="131" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.45803206694444448" blue="0.97501627604166663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="tel"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                    </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="טלפון של המשרד" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRG-gg-8EL">
                                         <rect key="frame" x="275" y="54" width="92" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -961,7 +1073,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="לחיוג מהיר לחץ על המספר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg4-lW-y7q">
-                                        <rect key="frame" x="41" y="61" width="185" height="24"/>
+                                        <rect key="frame" x="41" y="62" width="185" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1090,7 +1202,7 @@
                         <viewLayoutGuide key="safeArea" id="RwV-Tn-NbE"/>
                     </view>
                     <connections>
-                        <outlet property="mobileLabel" destination="Nup-H9-5pF" id="57o-qE-7OI"/>
+                        <outlet property="mobileTextView" destination="mbc-Cp-grz" id="mJl-te-9gL"/>
                         <outlet property="yomHamishiLbl" destination="IfF-O6-TJS" id="JbE-sd-sb8"/>
                         <outlet property="yomReviiLbl" destination="rdb-fn-zic" id="rbB-ae-6B4"/>
                         <outlet property="yomRishonLbl" destination="XZb-kB-1iS" id="5q7-c2-Tq4"/>

@@ -1,4 +1,5 @@
 PODS:
+  - ActiveLabel (1.0.1)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -25,6 +26,8 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - Firebase/Analytics (6.1.0):
+    - Firebase/Core
   - Firebase/Auth (6.1.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.1.0)
@@ -117,10 +120,12 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - ActiveLabel (~> 1.0.1)
   - DropDown
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -132,6 +137,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ActiveLabel
     - Bolts
     - DropDown
     - FacebookCore
@@ -159,6 +165,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ActiveLabel: b8b2396fe25308d563601437d6605bf691c3b5db
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
@@ -185,6 +192,6 @@ SPEC CHECKSUMS:
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 5f42dd39954b3abcf4c36906340a177541f677c6
+PODFILE CHECKSUM: 7980821d75f809383696f3d26233e76fe1a1ceae
 
 COCOAPODS: 1.6.1

@@ -13,7 +13,10 @@ import Firebase
 class ContactUsPageViewController: UIViewController {
 
   
-    @IBOutlet weak var mobileLabel: UILabel!
+//    @IBOutlet weak var mobileLabel: UILabel!
+    
+    @IBOutlet weak var mobileTextView: UITextView!
+    
     
     @IBOutlet weak var yomRishonLbl: UILabel!
     @IBOutlet weak var yomSheniLbl: UILabel!
@@ -30,16 +33,75 @@ class ContactUsPageViewController: UIViewController {
         getDataFromFireBaseAndDisplay()
         
         
-        
-        //setting up the phone number to be able to tap on for make a call
-        mobileLabel.isUserInteractionEnabled = true;
-        let tap = UITapGestureRecognizer(target: self, action:#selector(self.phoneNumberLabelTap))
-        
-        tap.delegate = self as? UIGestureRecognizerDelegate
-        mobileLabel.addGestureRecognizer(tap)
+//
+//        //setting up the phone number to be able to tap on for make a call
+//        mobileLabel.isUserInteractionEnabled = true;
+//        let tap = UITapGestureRecognizer(target: self, action:#selector(self.phoneNumberLabelTap))
+//
+//        tap.delegate = self as? UIGestureRecognizerDelegate
+//        mobileLabel.addGestureRecognizer(tap)
 
+        
+        getDataFromFireBaseTest()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
+    
+    
+    //fun for about us page
+    
+    
+    
+    func getDataFromFireBaseTest(){
+        
+        Database.database().reference().child("aboutUsPage/agudaOfficeProfessionalSkills").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            //            let value = snapshot.value as? String
+            //            print("value String ", value)
+            if ( snapshot.value is NSNull ) {
+                
+                // DATA WAS NOT FOUND
+                print("– – – Data was not found – – –")
+            }
+            else{
+                
+                let officeResidentDictionaryInfo = snapshot.value as? NSDictionary
+                print("value officeResidentDictionaryInfo 1 ", officeResidentDictionaryInfo![0])
+//                if officeResidentDictionaryInfo[0] == "dovrotVeHasbara"{
+//                    print("FOUND THE TAFKID")
+//                }
+                for professionSnapshot in snapshot.children{
+                    print(" NEW ", professionSnapshot)
+                    
+                    
+                    let restDict = professionSnapshot as! DataSnapshot
+                    let dict = restDict.value as! [String: String?]
+                    
+                    // DEFINE VARIABLES FOR LABELS
+                    let nameOfResident = dict["name"] as? String ?? ""
+                    let professionOfResident = dict["profession"] as? String ?? ""
+                    let imageUrl = dict["imageUrl"] as? String ?? ""
+                    
+                    print("THE RENEW DICTIONARY ",restDict)
+                    print("THE dict value ", dict)
+                    print("nameOfResident ",nameOfResident)
+                    print("proffesionOfResident ", professionOfResident)
+                    print("imageUrl ", imageUrl)
+                    
+                    
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    
+    }
+    
+    
     
     func getDataFromFireBaseAndDisplay(){
         
@@ -55,7 +117,7 @@ class ContactUsPageViewController: UIViewController {
             let officeNumber = officeInfo?["officeNumber"] as? String ?? ""
             
             // WHY AFTER I EDIT THE UPDATE NUMBER I FOUND NIL When I Prompt To call
-           // self.mobileLabel.text = officeNumber
+            self.mobileTextView.text = officeNumber
             print("officeNumber String ", officeNumber)
 
             let officeEmail = officeInfo?["officeEmail"] as? String ?? ""
@@ -143,29 +205,29 @@ class ContactUsPageViewController: UIViewController {
     
     
     
-    @objc func phoneNumberLabelTap()
-        
-    {
-        
-        let phoneUrl = URL(string: "telprompt:\(mobileLabel.text ?? "")")!
-        
-        if(UIApplication.shared.canOpenURL(phoneUrl)) {
-            
-            UIApplication.shared.openURL(phoneUrl)
-        }
-        else {
-            // create the alert
-            let alert = UIAlertController(title: "Alert", message: "Cannot place call", preferredStyle: UIAlertController.Style.alert)
-            
-            // add the actions (buttons)
-            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-            
-        }
-    }
+//    @objc func phoneNumberLabelTap()
+//        
+//    {
+//        
+//        let phoneUrl = URL(string: "telprompt:\(mobileLabel.text ?? "")")!
+//        
+//        if(UIApplication.shared.canOpenURL(phoneUrl)) {
+//            
+//            UIApplication.shared.openURL(phoneUrl)
+//        }
+//        else {
+//            // create the alert
+//            let alert = UIAlertController(title: "Alert", message: "Cannot place call", preferredStyle: UIAlertController.Style.alert)
+//            
+//            // add the actions (buttons)
+//            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: nil))
+//            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+//            
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//            
+//        }
+//    }
     
     
     //URL Redference
