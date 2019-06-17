@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="53U-8U-VIs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hcY-KH-AfQ">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -862,7 +862,7 @@
                                                 <rect key="frame" x="41" y="24" width="332" height="357"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <mutableString key="text">אגודת הסטודנטים בעזריאלי
+                                                <string key="text">אגודת הסטודנטים בעזריאלי
 אגודת הסטודנטים היא הגוף המייצג את הסטודנטים במכללה בפני הנהלת המכללה בנושאים אקדמיים ואחרים, ופועלת בשיתוף פעולה עם המכללה ועם ארגונים נוספים. אגודת הסטודנטים שמה בראש ובראשונה את הסטודנטים ודואגת להם במגוון מישורים: אקדמיה ,רווחה, תרבות פנים וחוץ ,יזמות ,ספורט, ועוד.
 מחלקת האקדמיה דואגת לכל הקשור בפן האקדמי, טיפול בבעיות מול הסגל האקדמי ופיקוח כי חוקי התקנון מתקיימים.
 מחלקת רווחה פועלת לרווחת הסטודנטים תוך שמירה על תנאים סוציאליים במכללה ומחוצה לה.
@@ -891,7 +891,7 @@ tarbut.jce@gmail.com אליאור יעקב, רמ"ח ספורט,
 מייל משרד : office.jce@gmail.com
 אינסטגרם : aguda.jce
 שעות פעילות משרד האגודה: ימים א'- ה' בין השעות:  09:00-14:00
-</mutableString>
+</string>
                                                 <color key="textColor" red="0.97647058823529409" green="0.76862745098039209" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
